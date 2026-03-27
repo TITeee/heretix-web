@@ -1,0 +1,19 @@
+// @ts-check
+import { defineConfig } from 'astro/config';
+import tailwindcss from '@tailwindcss/vite';
+
+// https://astro.build/config
+export default defineConfig({
+  site: 'https://TITeee.github.io',
+  base: '/heretix-web',
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'ja'],
+    routing: {
+      prefixDefaultLocale: true,
+    },
+  },
+  vite: {
+    plugins: [tailwindcss()]
+  }
+});

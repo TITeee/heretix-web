@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Hero from '../../components/Hero.astro';
+import Overview from '../../components/Overview.astro';
+import Architecture from '../../components/Architecture.astro';
+import ComponentCards from '../../components/ComponentCards.astro';
+import Features from '../../components/Features.astro';
+import QuickStart from '../../components/QuickStart.astro';
+import Footer from '../../components/Footer.astro';
+import { useTranslations } from '../../i18n/utils';
+
+const lang = 'en';
+const t = useTranslations(lang);
+---
+
+<BaseLayout title={t.siteTitle} description={t.siteDescription} lang={lang}>
+  <Header lang={lang} />
+  <main>
+    <Hero lang={lang} />
+    <Overview lang={lang} />
+    <Architecture lang={lang} />
+    <ComponentCards lang={lang} />
+    <Features lang={lang} />
+    <QuickStart lang={lang} />
+  </main>
+  <Footer lang={lang} />
+</BaseLayout>

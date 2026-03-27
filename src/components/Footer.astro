@@ -1,0 +1,40 @@
+---
+import type { Lang } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const base = import.meta.env.BASE_URL;
+const otherLang = lang === 'en' ? 'ja' : 'en';
+const otherLangLabel = lang === 'en' ? '日本語' : 'English';
+---
+
+<footer class="border-t border-gray-800 py-12 px-4">
+  <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-500">
+    <div class="flex items-center gap-4">
+      <span class="font-bold text-gray-400">heretix</span>
+      <span>·</span>
+      <span>{t.footerLicense}</span>
+    </div>
+    <div class="flex items-center gap-4">
+      <a
+        href={`${base}${otherLang}/`}
+        class="hover:text-gray-300 transition-colors"
+      >
+        {otherLangLabel}
+      </a>
+      <a
+        href="https://github.com/TITeee"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hover:text-gray-300 transition-colors"
+      >
+        GitHub
+      </a>
+    </div>
+  </div>
+</footer>
