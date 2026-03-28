@@ -17,7 +17,7 @@ const base = import.meta.env.BASE_URL;
     <!-- Background image (behind text) -->
     <div class="absolute inset-0 -mx-8 flex items-center justify-center">
       <img
-        src={`${base}/console-alert.png`}
+        src={`${base}/console-dashboard.png`}
         alt="heretix console screenshot"
         class="rounded-xl border border-gray-700 shadow-2xl w-full opacity-20 blur-none"
       />
@@ -54,8 +54,8 @@ const base = import.meta.env.BASE_URL;
   <!-- Thumbnails (bottom of section) -->
   <div class="flex gap-4 justify-center w-full max-w-3xl mx-auto">
     {[
-      { src: 'console-dashboard.png', label: 'Dashboard' },
-      { src: 'console-assets.png',    label: 'Assets' },
+      { src: 'console-assets.png', label: 'Dashboard' },
+      { src: 'console-alert.png',    label: 'Assets' },
       { src: 'console-alert-details.png', label: 'Alert Details' },
     ].map(({ src, label }) => (
       <button
