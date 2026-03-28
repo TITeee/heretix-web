@@ -12,13 +12,13 @@ const t = useTranslations(lang);
 
 <section id="quickstart" class="py-24 px-4 bg-gray-900/50">
   <div class="max-w-3xl mx-auto">
-    <h2 class="text-3xl font-bold text-white text-center mb-16">{t.quickstartTitle}</h2>
+    <h2 class="text-6xl font-bold text-white text-center mb-16">{t.quickstartTitle}</h2>
     <div class="flex flex-col gap-6">
 
       <div>
         <p class="text-gray-400 text-sm mb-2">{t.quickstartStep1}</p>
         <pre class="rounded-lg bg-gray-950 border border-gray-800 p-4 text-sm text-green-400 overflow-x-auto"><code># Scan the current host
-heretix-cli scan --api-url http://localhost:5000 --api-key YOUR_KEY
+heretix-cli scan --api-url http://heretix-api:5000 --api-key YOUR_KEY
 
 # Or collect packages only (offline)
 heretix-cli collect -o inventory.json</code></pre>
@@ -33,7 +33,7 @@ heretix-cli collect -o inventory.json</code></pre>
       <div>
         <p class="text-gray-400 text-sm mb-2">{t.quickstartStep3}</p>
         <pre class="rounded-lg bg-gray-950 border border-gray-800 p-4 text-sm text-purple-400 overflow-x-auto"><code># Click "Scan" on the asset page, or use the CLI directly
-heretix-cli check inventory.json --api-url http://localhost:5000</code></pre>
+heretix-cli check inventory.json --api-url http://heretix-api:5000</code></pre>
       </div>
 
     </div>

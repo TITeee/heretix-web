@@ -9,13 +9,13 @@ export const en = {
 
   // Hero
   heroTagline: 'Open-Source Vulnerability Management',
-  heroDescription: 'Scan, track, and manage vulnerabilities across your Linux servers and container images — from the command line to the dashboard.',
+  heroDescription: 'Scan, track, and manage vulnerabilities across your Linux servers and container images, from the command line to the dashboard.',
   heroCTAPrimary: 'Get Started',
   heroCTASecondary: 'View on GitHub',
 
   // Overview
   overviewTitle: 'What is heretix?',
-  overviewBody: 'heretix is an open-source vulnerability management platform composed of three components: a CLI scanner, a vulnerability data API, and a web management console. Together they provide a complete workflow — from scanning your infrastructure to tracking remediation.',
+  overviewBody: 'heretix is an open-source vulnerability management platform composed of three components: a CLI scanner, a vulnerability data API, and a web management console. Together they provide a complete workflow, from scanning your infrastructure to tracking remediation.',
 
   // Architecture
   architectureTitle: 'How It Works',
@@ -32,7 +32,7 @@ export const en = {
   // Features
   featuresTitle: 'Key Features',
   feature1Title: 'Multi-Ecosystem Scanning',
-  feature1Desc: 'Supports RPM, DPKG, npm, and PyPI package ecosystems on Linux hosts and Docker images.',
+  feature1Desc: 'Supports RPM, DPKG, npm, and PyPI package ecosystems on Linux hosts and Docker images. Integrates with CI/CD pipelines to detect vulnerabilities before deployment.',
   feature2Title: 'Aggregated Vulnerability Data',
   feature2Desc: 'Consolidates CVE data from NVD, OSV, and vendor advisories into a single normalized database.',
   feature3Title: 'CISA KEV Tracking',

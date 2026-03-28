@@ -14,7 +14,7 @@ const components = [
     name: t.cliName,
     description: t.cliDescription,
     github: 'https://github.com/TITeee/heretix-cli',
-    tech: ['Go', 'Docker', 'RPM', 'DPKG', 'npm', 'PyPI'],
+    tech: ['Go'],
     color: 'green',
   },
   {
@@ -57,7 +57,7 @@ const colorMap = {
 
 <section class="py-24 px-4 bg-gray-900/50">
   <div class="max-w-6xl mx-auto">
-    <h2 class="text-3xl font-bold text-white text-center mb-16">{t.componentsTitle}</h2>
+    <h2 class="text-6xl font-bold text-white text-center mb-16">{t.componentsTitle}</h2>
     <div class="grid md:grid-cols-3 gap-6">
       {components.map((comp) => {
         const colors = colorMap[comp.color as keyof typeof colorMap];

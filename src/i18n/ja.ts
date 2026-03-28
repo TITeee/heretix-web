@@ -3,7 +3,7 @@ import type { UIStrings } from './en';
 export const ja: UIStrings = {
   // Meta
   siteTitle: 'heretix',
-  siteDescription: 'Linux サーバーとコンテナ環境向けのオープンソース脆弱性管理プラットフォーム。',
+  siteDescription: 'Linuxサーバーとコンテナ環境向けのオープンソース脆弱性管理プラットフォーム。',
 
   // Nav
   navDocs: 'ドキュメント',
@@ -20,7 +20,7 @@ export const ja: UIStrings = {
   overviewBody: 'heretix は3つのコンポーネントで構成されたオープンソースの脆弱性管理プラットフォームです。CLIスキャナー、脆弱性データAPI、Web管理コンソールが連携し、インフラのスキャンから修正対応の追跡まで完結したワークフローを提供します。',
 
   // Architecture
-  architectureTitle: '仕組み',
+  architectureTitle: '構成',
 
   // Components
   componentsTitle: 'コンポーネント',
@@ -34,7 +34,7 @@ export const ja: UIStrings = {
   // Features
   featuresTitle: '主な機能',
   feature1Title: 'マルチエコシステム対応',
-  feature1Desc: 'Linux ホストや Docker イメージ上の RPM・DPKG・npm・PyPI パッケージエコシステムに対応。',
+  feature1Desc: 'Linux ホストや Docker イメージ上の RPM・DPKG・npm・PyPI パッケージエコシステムに対応。CI/CD パイプラインと統合し、デプロイ前に脆弱性を検出できます。',
   feature2Title: '脆弱性データの統合',
   feature2Desc: 'NVD・OSV・ベンダーアドバイザリのCVEデータを単一の正規化されたデータベースに集約。',
   feature3Title: 'CISA KEV 追跡',
