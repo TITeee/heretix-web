@@ -21,7 +21,10 @@ const t = useTranslations(lang);
 heretix-cli scan --api-url http://heretix-api:5000 --api-key YOUR_KEY
 
 # Or collect packages only (offline)
-heretix-cli collect -o inventory.json</code></pre>
+heretix-cli collect -o inventory.json
+
+# Export as CycloneDX SBOM (standards-compliant JSON)
+heretix-cli collect --format cyclonedx -o sbom.cdx.json</code></pre>
       </div>
 
       <div>

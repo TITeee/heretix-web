@@ -23,16 +23,16 @@ export const en = {
   // Components
   componentsTitle: 'Components',
   cliName: 'heretix-cli',
-  cliDescription: 'A command-line tool that scans Linux servers and Docker images for installed packages (RPM, DPKG, npm, PyPI) and queries the API for known vulnerabilities.',
+  cliDescription: 'A command-line tool that scans Linux servers and Docker images for installed packages (RPM, DPKG, npm, PyPI, Go, Composer/PHP) and queries heretix-api for known vulnerabilities. Also supports CycloneDX SBOM export.',
   apiName: 'heretix-api',
-  apiDescription: 'A REST API that aggregates and normalizes vulnerability data from NVD, OSV, CISA KEV, EPSS, and vendor advisories (Fortinet, Palo Alto, Cisco).',
+  apiDescription: 'A REST API that aggregates and normalizes vulnerability data from NVD, OSV, CISA KEV, EPSS, vendor advisories (Fortinet, Palo Alto, Cisco), and Oracle Linux OVAL feeds.',
   managementName: 'heretix-management',
-  managementDescription: 'A Next.js web console for importing scan results, visualizing vulnerability trends, managing alerts, and tracking remediation progress.',
+  managementDescription: 'A web console that imports packages collected by heretix-cli as assets, detects and manages vulnerabilities. Also supports automatic alert resolution based on package version tracking.',
 
   // Features
   featuresTitle: 'Key Features',
   feature1Title: 'Multi-Ecosystem Scanning',
-  feature1Desc: 'Supports RPM, DPKG, npm, and PyPI package ecosystems on Linux hosts and Docker images. Integrates with CI/CD pipelines to detect vulnerabilities before deployment.',
+  feature1Desc: 'Supports RPM, DPKG, npm, PyPI, Go, and Composer (PHP) package ecosystems on Linux hosts and Docker images. Integrates with CI/CD pipelines to detect vulnerabilities before deployment.',
   feature2Title: 'Aggregated Vulnerability Data',
   feature2Desc: 'Consolidates CVE data from NVD, OSV, and vendor advisories into a single normalized database.',
   feature3Title: 'CISA KEV Tracking',

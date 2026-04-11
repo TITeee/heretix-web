@@ -11,13 +11,13 @@ export const ja: UIStrings = {
 
   // Hero
   heroTagline: 'オープンソース脆弱性管理プラットフォーム',
-  heroDescription: 'Linux サーバーやコンテナイメージの脆弱性を、CLIからダッシュボードまで一貫して検出・追跡・管理します。',
+  heroDescription: 'Linux サーバーやコンテナイメージの脆弱性を、CLIからダッシュボードまで一貫して検出・追跡・管理。',
   heroCTAPrimary: 'はじめる',
   heroCTASecondary: 'GitHub で見る',
 
   // Overview
   overviewTitle: 'heretix とは？',
-  overviewBody: 'heretix は3つのコンポーネントで構成されたオープンソースの脆弱性管理プラットフォームです。CLIスキャナー、脆弱性データAPI、Web管理コンソールが連携し、インフラのスキャンから修正対応の追跡まで完結したワークフローを提供します。',
+  overviewBody: 'heretix は3つのコンポーネントで構成されたオープンソースの脆弱性管理プラットフォーム。CLIスキャナー、脆弱性データAPI、Web管理コンソールが連携し、インフラのスキャンから修正対応の追跡まで完結したワークフローを提供。',
 
   // Architecture
   architectureTitle: '構成',
@@ -25,24 +25,24 @@ export const ja: UIStrings = {
   // Components
   componentsTitle: 'コンポーネント',
   cliName: 'heretix-cli',
-  cliDescription: 'Linux サーバーや Docker イメージにインストールされたパッケージ（RPM・DPKG・npm・PyPI）をスキャンし、APIに問い合わせて既知の脆弱性を検出するCLIツールです。',
+  cliDescription: 'Linux サーバーや Docker イメージ上のパッケージ（RPM・DPKG・npm・PyPI・Go・Composer/PHP）をスキャンし、heretix-api に問い合わせて既知の脆弱性を検出する CLI ツール。SBOM（CycloneDX）出力も対応。',
   apiName: 'heretix-api',
-  apiDescription: 'NVD・OSV・CISA KEV・EPSS・ベンダーアドバイザリ（Fortinet・Palo Alto・Cisco）から脆弱性データを集約・正規化する REST API です。',
+  apiDescription: 'NVD・OSV・CISA KEV・EPSS・ベンダーアドバイザリ（Fortinet・Palo Alto・Cisco）・Oracle Linux OVAL フィードから脆弱性データを集約・正規化する REST API。',
   managementName: 'heretix-management',
-  managementDescription: 'スキャン結果のインポート、脆弱性トレンドの可視化、アラート管理、修正対応の追跡を行う Next.js 製 Web コンソールです。',
+  managementDescription: 'heretix-cli により収集したパッケージ情報をアセットとして取り込み、脆弱性の検知および管理をおこなう Web コンソール。パッケージのバージョン追跡によるアラートの自動クローズにも対応。',
 
   // Features
   featuresTitle: '主な機能',
   feature1Title: 'マルチエコシステム対応',
-  feature1Desc: 'Linux ホストや Docker イメージ上の RPM・DPKG・npm・PyPI パッケージエコシステムに対応。CI/CD パイプラインと統合し、デプロイ前に脆弱性を検出できます。',
+  feature1Desc: 'Linux ホストや Docker イメージ上の RPM・DPKG・npm・PyPI・Go・Composer（PHP）パッケージエコシステムに対応。CI/CD パイプラインと統合し、デプロイ前に脆弱性を検出。',
   feature2Title: '脆弱性データの統合',
-  feature2Desc: 'NVD・OSV・ベンダーアドバイザリのCVEデータを単一の正規化されたデータベースに集約。',
+  feature2Desc: 'NVD・OSV・ベンダーアドバイザリの CVE データを単一の正規化されたデータベースに集約。',
   feature3Title: 'CISA KEV 追跡',
   feature3Desc: 'CISA の既知悪用脆弱性カタログ（KEV）に掲載された脆弱性を優先度高としてフラグ付け。',
   feature4Title: 'EPSS スコアリング',
   feature4Desc: 'Exploit Prediction Scoring System のスコアを活用し、修正対応の優先順位付けを支援。',
   feature5Title: 'ベンダーアドバイザリ対応',
-  feature5Desc: 'Fortinet・Palo Alto Networks・Cisco PSIRT のアドバイザリを取り込み。',
+  feature5Desc: 'Fortinet・Palo Alto Networks・Cisco PSIRT に対応。',
   feature6Title: 'ダッシュボード分析',
   feature6Desc: '脆弱性トレンド、深刻度分布、影響を受けるアセットのトップをWebコンソールで可視化。',
 
