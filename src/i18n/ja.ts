@@ -25,7 +25,7 @@ export const ja: UIStrings = {
   // Components
   componentsTitle: 'コンポーネント',
   cliName: 'heretix-cli',
-  cliDescription: 'Linux サーバーや Docker イメージ上のパッケージ（RPM・DPKG・npm・PyPI・Go・Composer/PHP）をスキャンし、heretix-api に問い合わせて既知の脆弱性を検出する CLI ツール。SBOM（CycloneDX）出力も対応。',
+  cliDescription: 'Linux サーバーや Docker イメージ上のパッケージ（RPM・DPKG・Alpine/APK・npm・PyPI・Go・Composer/PHP）をスキャンし、heretix-api に問い合わせて既知の脆弱性を検出する CLI ツール。ローカルサプライチェーンセキュリティチェック（GlassWorm・依存関係混乱・悪意ある Install スクリプト・CI/CD パイプライン汚染・ハードコードされた秘密情報・ロックファイル整合性）も API 不要で実行。SBOM（CycloneDX）出力も対応。',
   apiName: 'heretix-api',
   apiDescription: 'NVD・OSV・CISA KEV・EPSS・ベンダーアドバイザリ（Fortinet・Palo Alto・Cisco）・Oracle Linux OVAL フィードから脆弱性データを集約・正規化する REST API。',
   managementName: 'heretix-management',
@@ -45,6 +45,8 @@ export const ja: UIStrings = {
   feature5Desc: 'Fortinet・Palo Alto Networks・Cisco PSIRT に対応。',
   feature6Title: 'ダッシュボード分析',
   feature6Desc: '脆弱性トレンド、深刻度分布、影響を受けるアセットのトップをWebコンソールで可視化。',
+  feature7Title: 'ローカルサプライチェーンセキュリティ',
+  feature7Desc: 'API 不要でサプライチェーン攻撃を検出。不可視文字インジェクション（GlassWorm）・依存関係混乱・悪意ある Install スクリプト・CI/CD パイプライン汚染・ハードコード秘密情報・ロックファイル整合性違反に対応。',
 
   // QuickStart
   quickstartTitle: 'クイックスタート',

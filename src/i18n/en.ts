@@ -23,7 +23,7 @@ export const en = {
   // Components
   componentsTitle: 'Components',
   cliName: 'heretix-cli',
-  cliDescription: 'A command-line tool that scans Linux servers and Docker images for installed packages (RPM, DPKG, npm, PyPI, Go, Composer/PHP) and queries heretix-api for known vulnerabilities. Also supports CycloneDX SBOM export.',
+  cliDescription: 'A command-line tool that scans Linux servers and Docker images for installed packages (RPM, DPKG, Alpine/APK, npm, PyPI, Go, Composer/PHP) and queries heretix-api for known vulnerabilities. Also performs local supply-chain security checks (GlassWorm, Dependency Confusion, Malicious Install Scripts, CI/CD Pipeline Poisoning, Hardcoded Secrets, Lock File Integrity) and supports CycloneDX SBOM export.',
   apiName: 'heretix-api',
   apiDescription: 'A REST API that aggregates and normalizes vulnerability data from NVD, OSV, CISA KEV, EPSS, vendor advisories (Fortinet, Palo Alto, Cisco), and Oracle Linux OVAL feeds.',
   managementName: 'heretix-management',
@@ -32,7 +32,7 @@ export const en = {
   // Features
   featuresTitle: 'Key Features',
   feature1Title: 'Multi-Ecosystem Scanning',
-  feature1Desc: 'Supports RPM, DPKG, npm, PyPI, Go, and Composer (PHP) package ecosystems on Linux hosts and Docker images. Integrates with CI/CD pipelines to detect vulnerabilities before deployment.',
+  feature1Desc: 'Supports RPM, DPKG, Alpine/APK, npm, PyPI, Go, and Composer (PHP) package ecosystems on Linux hosts and Docker images. Integrates with CI/CD pipelines to detect vulnerabilities before deployment.',
   feature2Title: 'Aggregated Vulnerability Data',
   feature2Desc: 'Consolidates CVE data from NVD, OSV, and vendor advisories into a single normalized database.',
   feature3Title: 'CISA KEV Tracking',
@@ -43,6 +43,8 @@ export const en = {
   feature5Desc: 'Incorporates advisories from Fortinet, Palo Alto Networks, and Cisco PSIRT.',
   feature6Title: 'Dashboard Analytics',
   feature6Desc: 'Visualize vulnerability trends, severity distributions, and top affected assets in a web console.',
+  feature7Title: 'Local Supply-Chain Security',
+  feature7Desc: 'Detects supply-chain attacks without API access: invisible character injection (GlassWorm), dependency confusion, malicious install scripts, CI/CD pipeline poisoning, hardcoded secrets, and lock file integrity violations.',
 
   // QuickStart
   quickstartTitle: 'Quick Start',
