@@ -39,6 +39,16 @@ heretix-cli collect --format cyclonedx -o sbom.cdx.json</code></pre>
 heretix-cli check inventory.json --api-url http://heretix-api:5000</code></pre>
       </div>
 
+      <div>
+        <p class="text-gray-400 text-sm mb-2">{t.quickstartStep4}</p>
+        <pre class="rounded-lg bg-gray-950 border border-gray-800 p-4 text-sm text-yellow-400 overflow-x-auto"><code># Submit inventory to GitHub Dependency Submission API
+heretix-cli submit inventory.json \
+  --token $GITHUB_TOKEN \
+  --repo owner/repo \
+  --sha $SHA \
+  --ref $REF</code></pre>
+      </div>
+
     </div>
   </div>
 </section>
