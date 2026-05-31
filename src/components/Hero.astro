@@ -8,9 +8,10 @@ interface Props {
 
 const { lang } = Astro.props;
 const t = useTranslations(lang);
+const base = import.meta.env.BASE_URL;
 ---
 
-<section class="px-4 pt-28 pb-40">
+<section class="px-4 pt-28 pb-10">
   <div class="max-w-5xl mx-auto text-center">
     <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-6">
       {t.heroTagline}
@@ -39,5 +40,17 @@ const t = useTranslations(lang);
       </a>
     </div>
 
+    <!-- Product demo video -->
+    <div class="max-w-5xl mx-auto mt-14 rounded-xl overflow-hidden border border-gray-800 shadow-2xl shadow-blue-950/30">
+      <video
+        src={`${base}/heretix_operation.mp4`}
+        autoplay
+        muted
+        loop
+        playsinline
+        class="w-full h-auto block cursor-pointer"
+        onclick="this.paused ? this.play() : this.pause()"
+      ></video>
+    </div>
   </div>
 </section>
