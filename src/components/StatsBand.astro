@@ -1,0 +1,29 @@
+---
+import type { Lang } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const stats = [
+  { value: t.stat1Value, label: t.stat1Label },
+  { value: t.stat2Value, label: t.stat2Label },
+  { value: t.stat3Value, label: t.stat3Label },
+  { value: t.stat4Value, label: t.stat4Label },
+];
+---
+
+<section class="px-4 py-12 border-y border-gray-800 bg-gray-900/50">
+  <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
+    {stats.map((stat) => (
+      <div class="text-center">
+        <div class="text-4xl sm:text-5xl font-bold text-blue-400 mb-2">{stat.value}</div>
+        <div class="text-sm text-gray-400 leading-snug">{stat.label}</div>
+      </div>
+    ))}
+  </div>
+</section>

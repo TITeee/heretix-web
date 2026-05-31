@@ -1,0 +1,68 @@
+---
+import type { Lang } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const base = import.meta.env.BASE_URL;
+
+const shots = [
+  { src: 'dashboard-overview.png', caption: t.showcaseCaptionDashboard },
+  { src: 'alerts.png', caption: t.showcaseCaptionAlerts },
+  { src: 'alerts-details.png', caption: t.showcaseCaptionAlertsDetail },
+  { src: 'assets.png', caption: t.showcaseCaptionAssets },
+  { src: 'dashboard-tags.png', caption: t.showcaseCaptionTags },
+];
+---
+
+<section class="py-24 px-4 bg-gray-900/50">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-4xl sm:text-5xl font-bold text-white text-center mb-4">{t.showcaseTitle}</h2>
+    <p class="text-gray-400 text-center max-w-3xl mx-auto mb-16 leading-relaxed">{t.showcaseSubtitle}</p>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {shots.map(({ src, caption }) => (
+        <figure class="flex flex-col">
+          <button
+            class="lightbox-trigger rounded-lg overflow-hidden border border-gray-800 hover:border-gray-500 transition-colors cursor-pointer"
+            data-src={`${base}/${src}`}
+            aria-label={caption}
+          >
+            <img src={`${base}/${src}`} alt={caption} class="w-full h-auto block" loading="lazy" />
+          </button>
+          <figcaption class="text-gray-500 text-xs mt-2 px-1">{caption}</figcaption>
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox dialog -->
+<dialog
+  id="lightbox"
+  class="bg-transparent backdrop:bg-black/80 p-0 max-w-5xl w-full mx-auto my-auto"
+>
+  <img id="lightbox-img" src="" alt="" class="w-full h-auto rounded-xl" />
+</dialog>
+
+<script>
+  const dialog = document.getElementById('lightbox') as HTMLDialogElement | null;
+  const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement | null;
+
+  if (dialog && lightboxImg) {
+    document.querySelectorAll<HTMLButtonElement>('.lightbox-trigger').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        lightboxImg.src = btn.dataset.src ?? '';
+        lightboxImg.alt = btn.getAttribute('aria-label') ?? '';
+        dialog.showModal();
+      });
+    });
+
+    dialog.addEventListener('click', (e) => {
+      if (e.target === dialog) dialog.close();
+    });
+  }
+</script>

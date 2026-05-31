@@ -28,6 +28,13 @@ heretix-cli collect --format cyclonedx -o sbom.cdx.json</code></pre>
       </div>
 
       <div>
+        <p class="text-gray-400 text-sm mb-2">{t.quickstartStepDetect}</p>
+        <pre class="rounded-lg bg-gray-950 border border-gray-800 p-4 text-sm text-red-400 overflow-x-auto"><code># Offline supply-chain scan — no API required.
+# Exit code 1 on findings fails the CI job.
+heretix-cli detect --scan-path .</code></pre>
+      </div>
+
+      <div>
         <p class="text-gray-400 text-sm mb-2">{t.quickstartStep2}</p>
         <pre class="rounded-lg bg-gray-950 border border-gray-800 p-4 text-sm text-blue-400 overflow-x-auto"><code># In heretix-management, open an asset and import inventory.json
 # via the "Import Inventory" button in the asset detail page</code></pre>

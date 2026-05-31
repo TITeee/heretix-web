@@ -2,6 +2,8 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Hero from '../../components/Hero.astro';
+import StatsBand from '../../components/StatsBand.astro';
+import SupplyChainDefense from '../../components/SupplyChainDefense.astro';
 import Overview from '../../components/Overview.astro';
 import Architecture from '../../components/Architecture.astro';
 import ComponentCards from '../../components/ComponentCards.astro';
@@ -18,6 +20,8 @@ const t = useTranslations(lang);
   <Header lang={lang} />
   <main>
     <Hero lang={lang} />
+    <StatsBand lang={lang} />
+    <SupplyChainDefense lang={lang} />
     <Overview lang={lang} />
     <Architecture lang={lang} />
     <ComponentCards lang={lang} />
