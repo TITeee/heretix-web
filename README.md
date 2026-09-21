@@ -1,43 +1,28 @@
-# Astro Starter Kit: Minimal
+# heretix-web
 
-```sh
-pnpm create astro@latest -- --template minimal
+Landing page for the [heretix](https://github.com/TITeee) vulnerability management project.
+
+**Live site:** https://titeee.github.io/heretix-web/
+
+## Related repositories
+
+- [heretix-api](https://github.com/TITeee/heretix-api) — vulnerability intelligence API (NVD, OSV, CVE Records, EPSS, KEV, vendor PSIRT advisories)
+- [heretix-cli](https://github.com/TITeee/heretix-cli) — scans servers, containers, and OSS dependencies for known CVEs, emits CycloneDX SBOMs
+- [heretix-management](https://github.com/TITeee/heretix-management) — vulnerability management dashboard (assets, alerts, SLA, VEX)
+
+## Development
+
+```bash
+pnpm install
+pnpm dev       # http://localhost:4321
+pnpm build     # outputs to ./dist/
+pnpm preview   # preview the production build locally
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Deployment
 
-## 🚀 Project Structure
+Pushing to `main` triggers [.github/workflows/deploy.yml](.github/workflows/deploy.yml), which builds the site with Astro and publishes `dist/` to GitHub Pages via `actions/deploy-pages`.
 
-Inside of your Astro project, you'll see the following folders and files:
+## Stack
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Astro 7, Tailwind CSS 4.
