@@ -4,11 +4,10 @@ import { en as t } from '../i18n/en';
 const base = import.meta.env.BASE_URL;
 
 const shots = [
-  { src: 'dashboard-overview.png', caption: t.showcaseCaptionDashboard },
+  { src: 'dashboard.png', caption: t.showcaseCaptionDashboard },
   { src: 'alerts.png', caption: t.showcaseCaptionAlerts },
-  { src: 'alerts-details.png', caption: t.showcaseCaptionAlertsDetail },
+  { src: 'alert-details.png', caption: t.showcaseCaptionAlertsDetail },
   { src: 'assets.png', caption: t.showcaseCaptionAssets },
-  { src: 'dashboard-tags.png', caption: t.showcaseCaptionTags },
 ];
 ---
 
@@ -16,7 +15,7 @@ const shots = [
   <div class="max-w-6xl mx-auto">
     <h2 class="text-3xl sm:text-4xl font-semibold text-ink tracking-tight text-center mb-4">{t.showcaseTitle}</h2>
     <p class="text-ink-dim text-center max-w-3xl mx-auto mb-12 leading-relaxed">{t.showcaseSubtitle}</p>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+    <div class="max-w-4xl mx-auto grid sm:grid-cols-2 gap-5">
       {shots.map(({ src, caption }) => (
         <figure class="flex flex-col">
           <button

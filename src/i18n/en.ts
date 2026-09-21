@@ -67,7 +67,6 @@ export const en = {
   showcaseTitle: 'See it in action',
   showcaseSubtitle: 'A full management console: dashboards, asset inventory, and alert triage in one self-hosted app.',
   showcaseCaptionDashboard: 'Dashboard — severity breakdown, trends, and KEV highlights',
-  showcaseCaptionTags: 'Tag analytics — risk by Internet Facing / Public Endpoint',
   showcaseCaptionAssets: 'Asset inventory imported from heretix-cli',
   showcaseCaptionAlerts: 'Alert triage with multi-value filters and bulk actions',
   showcaseCaptionAlertsDetail: 'Alert detail — CVSS, KEV, EPSS, fixed version, and timeline',
