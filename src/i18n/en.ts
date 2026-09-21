@@ -12,7 +12,7 @@ export const en = {
   heroTaglineHighlight: 'the appliances you can’t scan.',
   heroDescription: 'heretix tracks known vulnerabilities on firewalls and VPN gateways by matching vendor advisories against inventory — no active scanning of the device. The same inventory also covers OS packages, containers, and language dependencies. Apache-2.0, self-hosted.',
   heroCTAPrimary: 'Get Started',
-  heroCTASecondary: 'Star on GitHub',
+  heroCTASecondary: 'GitHub',
 
   // Stats
   stat1Value: '9',
