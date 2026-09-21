@@ -3,15 +3,15 @@ import type { UIStrings } from './en';
 export const ja: UIStrings = {
   // Meta
   siteTitle: 'heretix',
-  siteDescription: '軽量なオープンソース脆弱性管理インテリジェンス — CVEスキャン・サプライチェーン攻撃検知・セルフホストWebコンソールを統合。',
+  siteDescription: 'heretix は、ファイアウォールやVPN装置からサーバー・コンテナ・言語パッケージまで、1つのインベントリでCVEを追跡するオープンソースの脆弱性管理基盤。機器への能動スキャンは行いません。Apache-2.0、セルフホスト。',
 
   // Nav
   navDocs: 'ドキュメント',
   navGitHub: 'GitHub',
 
   // Hero
-  heroTagline: '軽量な脆弱性管理インテリジェンス。',
-  heroDescription: 'サーバー・コンテナ・CI/CDをCLIからダッシュボードまで一貫してスキャン・追跡・修正。既知のCVEだけでなく、ライブなサプライチェーン攻撃も検知。オープンソース、セルフホスト。',
+  heroTagline: 'サーバーもコンテナも、スキャンできない機器も、1つの脆弱性インベントリで。',
+  heroDescription: '登録したファイアウォール・VPN装置の情報をベンダーPSIRTと突き合わせ、能動スキャンなしでCVEを追跡。OSパッケージ・コンテナ・言語依存関係の脆弱性管理も同じ基盤で扱えます。Apache-2.0、セルフホスト。',
   heroCTAPrimary: 'はじめる',
   heroCTASecondary: 'GitHub でスター',
 

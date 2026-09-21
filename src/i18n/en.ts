@@ -1,15 +1,15 @@
 export const en = {
   // Meta
   siteTitle: 'heretix',
-  siteDescription: 'Lightweight open-source vulnerability management intelligence — CVE scanning, supply-chain attack detection, and a self-hosted web console.',
+  siteDescription: 'heretix tracks CVEs across firewalls, VPN appliances, servers, containers, and language packages in one inventory — no active scanning of network devices. Apache-2.0, self-hosted.',
 
   // Nav
   navDocs: 'Docs',
   navGitHub: 'GitHub',
 
   // Hero
-  heroTagline: 'Lightweight vulnerability management intelligence.',
-  heroDescription: 'Scan, track, and remediate across servers, containers, and CI/CD — from the command line to the dashboard. Beyond known CVEs, heretix detects live supply-chain attacks. Open source, self-hosted.',
+  heroTagline: 'One CVE inventory for servers, containers, and the appliances you can’t scan.',
+  heroDescription: 'heretix tracks known vulnerabilities on firewalls and VPN gateways by matching vendor advisories against inventory — no active scanning of the device. The same inventory also covers OS packages, containers, and language dependencies. Apache-2.0, self-hosted.',
   heroCTAPrimary: 'Get Started',
   heroCTASecondary: 'Star on GitHub',
 
