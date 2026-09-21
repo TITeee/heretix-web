@@ -16,14 +16,14 @@ export const ja: UIStrings = {
   heroCTASecondary: 'GitHub でスター',
 
   // Stats
-  stat1Value: '14+',
-  stat1Label: '脆弱性データソース',
-  stat2Value: '7',
-  stat2Label: 'パッケージエコシステム',
+  stat1Value: '9',
+  stat1Label: 'ベンダーPSIRT対応数',
+  stat2Value: '11',
+  stat2Label: 'OS・言語エコシステム数',
   stat3Value: '6',
   stat3Label: 'サプライチェーン検知器',
-  stat4Value: '3',
-  stat4Label: '統合コンポーネント',
+  stat4Value: '0',
+  stat4Label: '機器への能動スキャン回数',
 
   // Overview
   overviewTitle: 'heretix とは？',

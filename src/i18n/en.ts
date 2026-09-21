@@ -14,14 +14,14 @@ export const en = {
   heroCTASecondary: 'Star on GitHub',
 
   // Stats
-  stat1Value: '14+',
-  stat1Label: 'Vulnerability data sources',
-  stat2Value: '7',
-  stat2Label: 'Package ecosystems',
+  stat1Value: '9',
+  stat1Label: 'Vendor PSIRT feeds tracked',
+  stat2Value: '11',
+  stat2Label: 'OS & language ecosystems',
   stat3Value: '6',
   stat3Label: 'Supply-chain detectors',
-  stat4Value: '3',
-  stat4Label: 'Integrated components',
+  stat4Value: '0',
+  stat4Label: 'Active scans of your appliances',
 
   // Overview
   overviewTitle: 'What is heretix?',
