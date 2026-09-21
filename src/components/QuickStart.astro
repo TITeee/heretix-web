@@ -2,45 +2,45 @@
 import { en as t } from '../i18n/en';
 ---
 
-<section id="quickstart" class="py-24 px-4 bg-gray-900/50">
+<section id="quickstart" class="py-20 px-4 border-t border-line bg-bg-raised">
   <div class="max-w-3xl mx-auto">
-    <h2 class="text-6xl font-bold text-white text-center mb-16">{t.quickstartTitle}</h2>
+    <h2 class="text-3xl sm:text-4xl font-semibold text-ink tracking-tight text-center mb-12">{t.quickstartTitle}</h2>
     <div class="flex flex-col gap-6">
 
       <div>
-        <p class="text-gray-400 text-sm mb-2">{t.quickstartStep1}</p>
-        <pre class="rounded-lg bg-gray-950 border border-gray-800 p-4 text-sm text-green-400 overflow-x-auto"><code># Scan the current host
+        <p class="font-mono text-xs text-ink-mute mb-2">{t.quickstartStep1}</p>
+        <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code><span class="text-code-mute"># Scan the current host</span>
 heretix-cli scan --api-url http://heretix-api:5000 --api-key YOUR_KEY
 
-# Or collect packages only (offline)
+<span class="text-code-mute"># Or collect packages only (offline)</span>
 heretix-cli collect -o inventory.json
 
-# Export as CycloneDX SBOM (standards-compliant JSON)
+<span class="text-code-mute"># Export as CycloneDX SBOM (standards-compliant JSON)</span>
 heretix-cli collect --format cyclonedx -o sbom.cdx.json</code></pre>
       </div>
 
       <div>
-        <p class="text-gray-400 text-sm mb-2">{t.quickstartStepDetect}</p>
-        <pre class="rounded-lg bg-gray-950 border border-gray-800 p-4 text-sm text-red-400 overflow-x-auto"><code># Offline supply-chain scan — no API required.
-# Exit code 1 on findings fails the CI job.
+        <p class="font-mono text-xs text-ink-mute mb-2">{t.quickstartStepDetect}</p>
+        <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code><span class="text-code-mute"># Offline supply-chain scan — no API required.
+# Exit code 1 on findings fails the CI job.</span>
 heretix-cli detect --scan-path .</code></pre>
       </div>
 
       <div>
-        <p class="text-gray-400 text-sm mb-2">{t.quickstartStep2}</p>
-        <pre class="rounded-lg bg-gray-950 border border-gray-800 p-4 text-sm text-blue-400 overflow-x-auto"><code># In heretix-management, open an asset and import inventory.json
-# via the "Import Inventory" button in the asset detail page</code></pre>
+        <p class="font-mono text-xs text-ink-mute mb-2">{t.quickstartStep2}</p>
+        <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code><span class="text-code-mute"># In heretix-management, open an asset and import inventory.json
+# via the "Import Inventory" button in the asset detail page</span></code></pre>
       </div>
 
       <div>
-        <p class="text-gray-400 text-sm mb-2">{t.quickstartStep3}</p>
-        <pre class="rounded-lg bg-gray-950 border border-gray-800 p-4 text-sm text-purple-400 overflow-x-auto"><code># Click "Scan" on the asset page, or use the CLI directly
+        <p class="font-mono text-xs text-ink-mute mb-2">{t.quickstartStep3}</p>
+        <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code><span class="text-code-mute"># Click "Scan" on the asset page, or use the CLI directly</span>
 heretix-cli check inventory.json --api-url http://heretix-api:5000</code></pre>
       </div>
 
       <div>
-        <p class="text-gray-400 text-sm mb-2">{t.quickstartStep4}</p>
-        <pre class="rounded-lg bg-gray-950 border border-gray-800 p-4 text-sm text-yellow-400 overflow-x-auto"><code># Submit inventory to GitHub Dependency Submission API
+        <p class="font-mono text-xs text-ink-mute mb-2">{t.quickstartStep4}</p>
+        <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code><span class="text-code-mute"># Submit inventory to GitHub Dependency Submission API</span>
 heretix-cli submit inventory.json \
   --token $GITHUB_TOKEN \
   --repo owner/repo \

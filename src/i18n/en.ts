@@ -8,7 +8,8 @@ export const en = {
   navGitHub: 'GitHub',
 
   // Hero
-  heroTagline: 'One CVE inventory for servers, containers, and the appliances you can’t scan.',
+  heroTaglineLead: 'One CVE inventory for servers, containers, and ',
+  heroTaglineHighlight: 'the appliances you can’t scan.',
   heroDescription: 'heretix tracks known vulnerabilities on firewalls and VPN gateways by matching vendor advisories against inventory — no active scanning of the device. The same inventory also covers OS packages, containers, and language dependencies. Apache-2.0, self-hosted.',
   heroCTAPrimary: 'Get Started',
   heroCTASecondary: 'Star on GitHub',

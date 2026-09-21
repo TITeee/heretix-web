@@ -1,6 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
 @import "tailwindcss";
 
+@theme {
+  --font-sans: 'Geist', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
+
+  --color-bg: #fbfaf7;
+  --color-bg-raised: #ffffff;
+  --color-line: #e7e3da;
+  --color-line-soft: #efece4;
+  --color-line-strong: #cfc9bb;
+  --color-ink: #17140f;
+  --color-ink-dim: #57524a;
+  --color-ink-mute: #6b6459;
+  --color-accent: #b8421a;
+  --color-accent-soft: #f7ece6;
+  --color-danger: #9c3a3a;
+  --color-code: #14120f;
+  --color-code-ink: #f0ebe0;
+  --color-code-mute: #8b8477;
+}
+
 html {
-  font-family: 'Geist', ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-sans);
 }

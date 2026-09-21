@@ -21,7 +21,7 @@ const canonicalHref = new URL(`${base}/`, Astro.site).toString();
     <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
     <link rel="canonical" href={canonicalHref} />
   </head>
-  <body class="bg-linear-to-r from-gray-700 to-gray-950 text-gray-100 antialiased">
+  <body class="bg-bg text-ink antialiased">
     <slot />
   </body>
 </html>
