@@ -12,25 +12,22 @@ import Showcase from '../components/Showcase.astro';
 import Features from '../components/Features.astro';
 import QuickStart from '../components/QuickStart.astro';
 import Footer from '../components/Footer.astro';
-import { useTranslations } from '../i18n/utils';
-
-const lang = 'en';
-const t = useTranslations(lang);
+import { en as t } from '../i18n/en';
 ---
 
-<BaseLayout title={t.siteTitle} description={t.siteDescription} lang={lang} canonicalPath="/en/">
-  <Header lang={lang} />
+<BaseLayout title={t.siteTitle} description={t.siteDescription}>
+  <Header />
   <main>
-    <Hero lang={lang} />
-    <StatsBand lang={lang} />
-    <TargetAssets lang={lang} />
-    <SupplyChainDefense lang={lang} />
-    <Overview lang={lang} />
-    <Architecture lang={lang} />
-    <ComponentCards lang={lang} />
-    <Showcase lang={lang} />
-    <Features lang={lang} />
-    <QuickStart lang={lang} />
+    <Hero />
+    <StatsBand />
+    <TargetAssets />
+    <SupplyChainDefense />
+    <Overview />
+    <Architecture />
+    <ComponentCards />
+    <Showcase />
+    <Features />
+    <QuickStart />
   </main>
-  <Footer lang={lang} />
+  <Footer />
 </BaseLayout>
