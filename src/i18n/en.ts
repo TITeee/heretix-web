@@ -23,6 +23,22 @@ export const en = {
   stat4Value: '0',
   stat4Label: 'Active scans of your appliances',
 
+  // Target Assets
+  assetsTitle: 'What heretix tracks',
+  assetsSubtitle: 'One inventory, matched against each vendor’s own advisories — no agent or active scan running on the device itself.',
+  assetsNetworkTitle: 'Network devices & appliances',
+  assetsNetworkDesc: 'Firewalls, VPN gateways, and security appliances from Fortinet, Palo Alto Networks, Cisco, Sophos, SonicWall, Broadcom/VMware, and Check Point.',
+  assetsOsTitle: 'Server operating systems',
+  assetsOsDesc: 'RHEL, AlmaLinux, Rocky Linux, Oracle Linux, CentOS, Debian, Ubuntu, and Alpine, matched against distro-specific advisory feeds.',
+  assetsMiddlewareTitle: 'Middleware',
+  assetsMiddlewareDesc: 'Apache HTTP Server, Apache Tomcat, nginx, Zabbix, Splunk, and Oracle products (WebLogic, Java SE, MySQL, E-Business Suite, and more via Oracle CPU).',
+  assetsPackagesTitle: 'Language packages',
+  assetsPackagesDesc: 'npm/yarn/pnpm, PyPI, Go modules (and statically linked Go binaries), Composer, Maven, Gradle, and Java archives (JAR/WAR/EAR).',
+  assetsContainerTitle: 'Container images',
+  assetsContainerDesc: 'Scan a Docker image directly, including the FROM base image chain from a Dockerfile.',
+  assetsCnaTitle: 'Every other vendor, via CVE Record',
+  assetsCnaDesc: 'For vendors with no dedicated fetcher above, heretix ingests the affected products and version ranges vendors themselves declare in every published CVE Record from the CVE Program — so coverage isn’t limited to the vendors listed here.',
+
   // Overview
   overviewTitle: 'What is heretix?',
   overviewBody: 'heretix is an open-source vulnerability management platform composed of three components: a CLI scanner, a vulnerability data API, and a web management console. Together they provide a complete workflow, from scanning your infrastructure to detecting supply-chain attacks to tracking remediation.',

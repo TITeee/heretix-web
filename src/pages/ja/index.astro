@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Hero from '../../components/Hero.astro';
 import StatsBand from '../../components/StatsBand.astro';
+import TargetAssets from '../../components/TargetAssets.astro';
 import SupplyChainDefense from '../../components/SupplyChainDefense.astro';
 import Overview from '../../components/Overview.astro';
 import Architecture from '../../components/Architecture.astro';
@@ -22,6 +23,7 @@ const t = useTranslations(lang);
   <main>
     <Hero lang={lang} />
     <StatsBand lang={lang} />
+    <TargetAssets lang={lang} />
     <SupplyChainDefense lang={lang} />
     <Overview lang={lang} />
     <Architecture lang={lang} />

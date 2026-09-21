@@ -25,6 +25,22 @@ export const ja: UIStrings = {
   stat4Value: '0',
   stat4Label: '機器への能動スキャン回数',
 
+  // Target Assets
+  assetsTitle: 'heretix が追跡できる資産',
+  assetsSubtitle: '登録したインベントリを各ベンダーのアドバイザリと突き合わせるだけ。機器上でエージェントも能動スキャンも動かしません。',
+  assetsNetworkTitle: 'ネットワーク機器・アプライアンス',
+  assetsNetworkDesc: 'Fortinet・Palo Alto Networks・Cisco・Sophos・SonicWall・Broadcom/VMware・Check Point のファイアウォール・VPNゲートウェイ・セキュリティアプライアンス。',
+  assetsOsTitle: 'サーバーOS',
+  assetsOsDesc: 'RHEL・AlmaLinux・Rocky Linux・Oracle Linux・CentOS・Debian・Ubuntu・Alpine を、ディストリビューション別のアドバイザリで照合。',
+  assetsMiddlewareTitle: 'ミドルウェア',
+  assetsMiddlewareDesc: 'Apache HTTP Server・Apache Tomcat・nginx・Zabbix・Splunk、および Oracle 製品（WebLogic・Java SE・MySQL・E-Business Suite ほか、Oracle CPU経由）。',
+  assetsPackagesTitle: '言語パッケージ',
+  assetsPackagesDesc: 'npm/yarn/pnpm・PyPI・Go modules（バイナリへの静的リンクも検出）・Composer・Maven・Gradle・Javaアーカイブ（JAR/WAR/EAR）。',
+  assetsContainerTitle: 'コンテナイメージ',
+  assetsContainerDesc: 'Docker イメージを直接スキャン。Dockerfile の FROM で指定されたベースイメージのチェーンも追跡。',
+  assetsCnaTitle: '専用フェッチャのないベンダーも',
+  assetsCnaDesc: '上記に専用フェッチャがないベンダーについても、CVE Program が公開する全CVEレコードからベンダー自身が申告した影響製品・バージョン範囲を取り込んでいます。掲載ベンダーに限定されないカバレッジです。',
+
   // Overview
   overviewTitle: 'heretix とは？',
   overviewBody: 'heretix は3つのコンポーネントで構成されたオープンソースの脆弱性管理プラットフォーム。CLIスキャナー、脆弱性データAPI、Web管理コンソールが連携し、インフラのスキャンからサプライチェーン攻撃の検知、修正対応の追跡まで完結したワークフローを提供。',
