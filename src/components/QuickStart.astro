@@ -1,53 +1,18 @@
 ---
 import { en as t } from '../i18n/en';
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <section id="quickstart" class="py-20 px-4 border-t border-line bg-bg-raised">
-  <div class="max-w-3xl mx-auto">
-    <h2 class="text-3xl sm:text-4xl font-semibold text-ink tracking-tight text-center mb-12">{t.quickstartTitle}</h2>
-    <div class="flex flex-col gap-6">
-
-      <div>
-        <p class="font-mono text-xs text-ink-mute mb-2">{t.quickstartStep1}</p>
-        <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code><span class="text-code-mute"># Scan the current host</span>
-heretix-cli scan --api-url http://heretix-api:5000 --api-key YOUR_KEY
-
-<span class="text-code-mute"># Or collect packages only (offline)</span>
-heretix-cli collect -o inventory.json
-
-<span class="text-code-mute"># Export as CycloneDX SBOM (standards-compliant JSON)</span>
-heretix-cli collect --format cyclonedx -o sbom.cdx.json</code></pre>
-      </div>
-
-      <div>
-        <p class="font-mono text-xs text-ink-mute mb-2">{t.quickstartStepDetect}</p>
-        <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code><span class="text-code-mute"># Offline supply-chain scan — no API required.
-# Exit code 1 on findings fails the CI job.</span>
-heretix-cli detect --scan-path .</code></pre>
-      </div>
-
-      <div>
-        <p class="font-mono text-xs text-ink-mute mb-2">{t.quickstartStep2}</p>
-        <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code><span class="text-code-mute"># In heretix-management, open an asset and import inventory.json
-# via the "Import Inventory" button in the asset detail page</span></code></pre>
-      </div>
-
-      <div>
-        <p class="font-mono text-xs text-ink-mute mb-2">{t.quickstartStep3}</p>
-        <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code><span class="text-code-mute"># Click "Scan" on the asset page, or use the CLI directly</span>
-heretix-cli check inventory.json --api-url http://heretix-api:5000</code></pre>
-      </div>
-
-      <div>
-        <p class="font-mono text-xs text-ink-mute mb-2">{t.quickstartStep4}</p>
-        <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code><span class="text-code-mute"># Submit inventory to GitHub Dependency Submission API</span>
-heretix-cli submit inventory.json \
-  --token $GITHUB_TOKEN \
-  --repo owner/repo \
-  --sha $SHA \
-  --ref $REF</code></pre>
-      </div>
-
-    </div>
+  <div class="max-w-2xl mx-auto text-center">
+    <h2 class="text-3xl sm:text-4xl font-semibold text-ink tracking-tight mb-4">{t.quickstartTitle}</h2>
+    <p class="text-ink-dim leading-relaxed mb-8">{t.quickstartTeaserDesc}</p>
+    <a
+      href={`${base}/docs`}
+      class="inline-flex items-center justify-center px-7 py-3.5 rounded-lg bg-accent hover:opacity-90 text-white font-semibold transition-opacity"
+    >
+      {t.quickstartTeaserCta}
+    </a>
   </div>
 </section>

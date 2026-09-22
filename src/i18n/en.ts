@@ -1,7 +1,7 @@
 export const en = {
   // Meta
   siteTitle: 'heretix',
-  siteDescription: 'heretix tracks CVEs across firewalls, VPN appliances, servers, containers, and language packages in one inventory — no active scanning of network devices. Apache-2.0, self-hosted.',
+  siteDescription: 'heretix tracks CVEs across firewalls, VPN appliances, servers, containers, and language packages in one inventory, with no active scanning of network devices. Apache-2.0, self-hosted.',
 
   // Nav
   navDocs: 'Docs',
@@ -10,7 +10,7 @@ export const en = {
   // Hero
   heroTaglineLead: 'One CVE inventory for servers, containers, and ',
   heroTaglineHighlight: 'the appliances you can’t scan.',
-  heroDescription: 'heretix tracks known vulnerabilities on firewalls and VPN gateways by matching vendor advisories against inventory — no active scanning of the device. The same inventory also covers OS packages, containers, and language dependencies. Apache-2.0, self-hosted.',
+  heroDescription: 'heretix tracks known vulnerabilities on firewalls and VPN gateways by matching vendor advisories against inventory, with no active scanning of the device. The same inventory also covers OS packages, containers, and language dependencies. Apache-2.0, self-hosted.',
   heroCTAPrimary: 'Get Started',
   heroCTASecondary: 'GitHub',
 
@@ -26,7 +26,7 @@ export const en = {
 
   // Target Assets
   assetsTitle: 'What heretix tracks',
-  assetsSubtitle: 'One inventory, matched against each vendor’s own advisories — no agent or active scan running on the device itself.',
+  assetsSubtitle: 'One inventory, matched against each vendor’s own advisories, with no agent or active scan running on the device itself.',
   assetsNetworkTitle: 'Network devices & appliances',
   assetsNetworkDesc: 'Firewalls, VPN gateways, and security appliances from Fortinet, Palo Alto Networks, Cisco, Sophos, SonicWall, Broadcom/VMware, and Check Point.',
   assetsOsTitle: 'Server operating systems',
@@ -38,7 +38,7 @@ export const en = {
   assetsContainerTitle: 'Container images',
   assetsContainerDesc: 'Scan a Docker image directly, including the FROM base image chain from a Dockerfile.',
   assetsCnaTitle: 'Every other vendor, via CVE Record',
-  assetsCnaDesc: 'For vendors with no dedicated fetcher above, heretix ingests the affected products and version ranges vendors themselves declare in every published CVE Record from the CVE Program — so coverage isn’t limited to the vendors listed here.',
+  assetsCnaDesc: 'For vendors with no dedicated fetcher above, heretix ingests the affected products and version ranges vendors themselves declare in every published CVE Record from the CVE Program, so coverage isn’t limited to the vendors listed here.',
 
   // Overview
   overviewTitle: 'What is heretix?',
@@ -46,7 +46,7 @@ export const en = {
 
   // Supply-Chain Defense (headline section)
   scTitle: 'Detect attacks, not just CVEs',
-  scSubtitle: 'CVE scanners only tell you about known vulnerabilities. heretix-cli also detects active supply-chain attacks locally — no API, no network required — so you can gate them in CI before they ship.',
+  scSubtitle: 'CVE scanners only tell you about known vulnerabilities. heretix-cli also detects active supply-chain attacks locally, with no API and no network required, so you can gate them in CI before they ship.',
   scGlasswormTitle: 'GlassWorm',
   scGlasswormDesc: 'Invisible / zero-width Unicode characters injected into source to hide malicious code from human review.',
   scDepConfusionTitle: 'Dependency Confusion',
@@ -66,17 +66,17 @@ export const en = {
   // Showcase
   showcaseTitle: 'See it in action',
   showcaseSubtitle: 'A full management console: dashboards, asset inventory, and alert triage in one self-hosted app.',
-  showcaseCaptionDashboard: 'Dashboard — severity breakdown, trends, and KEV highlights',
+  showcaseCaptionDashboard: 'Dashboard: severity breakdown, trends, and KEV highlights',
   showcaseCaptionAssets: 'Asset inventory imported from heretix-cli',
   showcaseCaptionAlerts: 'Alert triage with multi-value filters and bulk actions',
-  showcaseCaptionAlertsDetail: 'Alert detail — CVSS, KEV, EPSS, fixed version, and timeline',
+  showcaseCaptionAlertsDetail: 'Alert detail: CVSS, KEV, EPSS, fixed version, and timeline',
 
   // Components
   componentsTitle: 'Components',
   cliName: 'heretix-cli',
-  cliDescription: 'A command-line tool that scans Linux servers, Windows hosts, and Docker images for installed packages across RPM, DPKG, Alpine/APK, npm/yarn/pnpm, PyPI (from actual `site-packages` installs, not just lockfiles), Go modules (plus modules statically linked into a compiled binary), Composer, Maven, Gradle, and Java archives (JAR/WAR/EAR), then queries heretix-api for known vulnerabilities. Findings are collapsed per source package and kernel-header/build-toolchain packages are tagged separately — on one measured image, `--runtime-only` cut findings from 1485 to 721 to 267. Supports Docker registry authentication (ECR, GCR, Docker Hub) and Dockerfile base image chain scanning. Performs local supply-chain security checks (GlassWorm, Dependency Confusion, Malicious Install Scripts, CI/CD Pipeline Poisoning, Hardcoded Secrets, Lock File Integrity) without API access — run them anytime with the offline `detect` command (beta). Exports CycloneDX SBOM with a full dependency tree, package integrity hashes, and distro-qualified PURLs, and submits inventory to the GitHub Dependency Submission API. Structured exit codes (0/1/2) for CI/CD integration.',
+  cliDescription: 'A command-line tool that scans Linux servers, Windows hosts, and Docker images for installed packages across RPM, DPKG, Alpine/APK, npm/yarn/pnpm, PyPI (from actual `site-packages` installs, not just lockfiles), Go modules (plus modules statically linked into a compiled binary), Composer, Maven, Gradle, and Java archives (JAR/WAR/EAR), then queries heretix-api for known vulnerabilities. Findings are collapsed per source package, and kernel-header/build-toolchain packages are tagged separately; on one measured image, `--runtime-only` cut findings from 1485 to 721 to 267. Supports Docker registry authentication (ECR, GCR, Docker Hub) and Dockerfile base image chain scanning. Performs local supply-chain security checks (GlassWorm, Dependency Confusion, Malicious Install Scripts, CI/CD Pipeline Poisoning, Hardcoded Secrets, Lock File Integrity) without API access. Run them anytime with the offline `detect` command (beta). Exports CycloneDX SBOM with a full dependency tree, package integrity hashes, and distro-qualified PURLs, and submits inventory to the GitHub Dependency Submission API. Structured exit codes (0/1/2) for CI/CD integration.',
   apiName: 'heretix-api',
-  apiDescription: 'A REST API that aggregates and normalizes vulnerability data from NVD, OSV, CISA KEV, EPSS, and every published CVE Record — including CNA-declared affected products and CISA Vulnrichment’s SSVC assessment (exploitation state, automatability, technical impact; final priority scoring is left to you). Vendor PSIRT advisories cover Fortinet, Palo Alto Networks, Cisco, Sophos, SonicWall, Broadcom/VMware, Check Point, Red Hat, Oracle Linux, Oracle CPU, Splunk, Apache HTTP Server, Apache Tomcat, nginx, and Zabbix. Search results report the fixed version for each finding, alongside CPE 2.3 and batch lookup endpoints.',
+  apiDescription: 'A REST API that aggregates and normalizes vulnerability data from NVD, OSV, CISA KEV, EPSS, and every published CVE Record, including CNA-declared affected products and CISA Vulnrichment’s SSVC assessment (exploitation state, automatability, technical impact; final priority scoring is left to you). Vendor PSIRT advisories cover Fortinet, Palo Alto Networks, Cisco, Sophos, SonicWall, Broadcom/VMware, Check Point, Red Hat, Oracle Linux, Oracle CPU, Splunk, Apache HTTP Server, Apache Tomcat, nginx, and Zabbix. Search results report the fixed version for each finding, alongside CPE 2.3 and batch lookup endpoints.',
   managementName: 'heretix-management',
   managementDescription: 'A web console for end-to-end vulnerability management. Import heretix-cli inventory JSON or CycloneDX SBOMs, register network devices and firewalls manually, and manage software packages outside package managers with CPE and vendor advisory support. Features include: an interactive dependency graph (beta) with direct/indirect classification, VEX document export/import (beta, CycloneDX), configurable SLA due dates by severity with a fixed override for CISA KEV, alert timeline with automatic event recording, fixed-version display, bulk status updates, CSV/JSON export, vulnerability search by package/CVE/CPE/advisory, metadata refresh to pull the latest CVSS/EPSS/KEV data, scheduled daily jobs, user management with admin/operator roles, an admin-only audit log, and structured JSON logging.',
 
@@ -105,15 +105,69 @@ export const en = {
   feature11Title: 'Fix Version Guidance',
   feature11Desc: 'heretix-api reports the version that fixes each finding, surfaced on the heretix-management alert detail so teams know exactly which upgrade clears the vulnerability.',
   feature12Title: 'Local-Only Detect',
-  feature12Desc: 'The heretix-cli detect command runs every supply-chain detector fully offline — no API required — with parallel execution and CI-friendly exit codes.',
+  feature12Desc: 'The heretix-cli detect command runs every supply-chain detector fully offline (no API required), with parallel execution and CI-friendly exit codes.',
 
-  // QuickStart
+  // QuickStart (teaser on homepage)
   quickstartTitle: 'Quick Start',
+  quickstartTeaserDesc: 'Stand up heretix-api and heretix-management with Docker Compose, load vulnerability data, then scan your first host with heretix-cli.',
+  quickstartTeaserCta: 'View the deploy guide',
   quickstartStep1: '1. Run heretix-cli to collect packages',
   quickstartStepDetect: '1b. Gate supply-chain attacks in CI (offline, no API)',
   quickstartStep2: '2. Import the inventory into heretix-management',
   quickstartStep3: '3. Run a vulnerability scan',
   quickstartStep4: '4. Submit to GitHub for Dependabot alerts (optional)',
+
+  // Docs page
+  docsMetaTitle: 'heretix Docs',
+  docsMetaDescription: 'Deploy heretix-api and heretix-management with Docker Compose, load vulnerability data, then scan your first host with heretix-cli.',
+  docsTitle: 'Docs',
+  docsSubtitle: 'Everything needed to self-host heretix: stand up the API and console, load vulnerability data, then start scanning.',
+
+  docsNavRequirements: 'Requirements',
+  docsNavDeployApi: 'Deploy heretix-api',
+  docsNavImportData: 'Import vulnerability data',
+  docsNavDeployManagement: 'Deploy heretix-management',
+  docsNavQuickstart: 'Quick Start (CLI)',
+
+  docsRequirementsTitle: 'Requirements',
+  docsRequirementsDesc: 'Minimum sizing for a PoC deployment. heretix-api and heretix-management are separate Docker Compose stacks; totals below cover both.',
+  docsRequirementsCpu: '2 vCPU minimum. The heretix-api app container can burst to roughly 70% of one core during data imports and searches; Postgres adds its own load while an import is running.',
+  docsRequirementsRam: '8GB minimum, 16GB recommended. Postgres for heretix-api is the dominant consumer (around 7.7GB with a full NVD mirror plus several OSV ecosystems loaded); the two app containers and heretix-management’s database use well under 1GB combined.',
+  docsRequirementsDisk: '20GB to start. heretix-api’s database volume alone can reach around 11GB after months of accumulated NVD and OSV data; budget more if you import every OSV ecosystem heretix supports.',
+  docsRequirementsSoftware: 'Docker and Docker Compose v2.',
+
+  docsDeployApiTitle: 'Deploy heretix-api',
+  docsDeployApiDesc: 'heretix-api aggregates NVD, OSV, CISA KEV, EPSS, and vendor advisories into a searchable database. It ships with its own PostgreSQL via Docker Compose.',
+  docsDeployApiStep1: '1. Clone and configure',
+  docsDeployApiStep1Note: 'Set API_KEY to a value of your choosing. heretix-cli and heretix-management both authenticate with it.',
+  docsDeployApiStep2: '2. Start the stack',
+  docsDeployApiStep2Note: 'The API is now live at http://localhost:5000. GET /health checks it’s up; /dashboard shows import status (needs the same API_KEY).',
+  docsDeployApiStep3: '3. Verify it’s running',
+  docsDeployApiStep3Note: 'Expect {"status":"ok",...} from the health check, and both containers listed as Up (the db container also shows healthy). If the app container keeps restarting, check docker compose logs -f app.',
+  docsDeployApiStep4: '4. Update (later, when a new version is out)',
+  docsDeployApiStep4Note: 'Not part of the initial setup. Run it whenever you want to pick up new changes. Rebuilds the image and restarts the container; schema migrations and one-time backfills run automatically on every container start.',
+
+  docsImportTitle: 'Import vulnerability data',
+  docsImportDesc: 'A fresh database is empty. Run the initial import once before scanning anything.',
+  docsImportNote: 'NVD’s full mirror (~240k CVEs) takes about 2.5 minutes with an NVD_API_KEY set in .env, or ~12 minutes without one. Import only the OSV ecosystems you actually scan. After the initial import, daily delta jobs and vendor advisory fetchers keep the database current automatically, with progress visible on /dashboard.',
+  docsImportEcosystemsLink: 'Full ecosystem and vendor advisory list',
+
+  docsDeployManagementTitle: 'Deploy heretix-management',
+  docsDeployManagementDesc: 'heretix-management is the web console for asset inventory, alert triage, and SLAs, and runs as its own Docker Compose stack with its own database.',
+  docsDeployManagementStep1: '1. Clone and configure',
+  docsDeployManagementStep1Note: 'AUTH_SECRET: generate with openssl rand -base64 32. HERETIX_API_KEY must match the API_KEY set for heretix-api above. heretix-api and heretix-management are separate Compose projects. If both run on the same host, point HERETIX_API_URL at the host’s actual IP rather than localhost, since the management container can’t reach the api container through it.',
+  docsDeployManagementStep2: '2. Start and create the first user',
+  docsDeployManagementStep2Note: 'Default admin login is admin@example.com / changeme; override with SEED_EMAIL / SEED_PASSWORD. Open http://localhost:3000 and log in.',
+  docsDeployManagementStep3: '3. Verify it’s running',
+  docsDeployManagementStep3Note: 'The db container shows healthy once Postgres accepts connections; the app container has no built-in health check, so confirm it isn’t restarting and that the login page loads at http://localhost:3000.',
+  docsDeployManagementStep4: '4. Update (later, when a new version is out)',
+  docsDeployManagementStep4Note: 'Not part of the initial setup. Run it whenever you want to pick up new changes. Database migrations run automatically on container start; the seed command from step 2 only needs to run once.',
+
+  docsQuickstartTitle: 'Quick Start (CLI)',
+  docsQuickstartDesc: 'With both services running, scan a host and bring findings into heretix-management.',
+  docsQuickstartInstallNote: 'Download the heretix-cli binary for your platform (Linux amd64/arm64, Windows amd64) from the',
+  docsQuickstartInstallLink: 'releases page',
+  docsQuickstartInstallNotePost: ', or build it from source with go build.',
 
   // Footer
   footerLicense: 'Licensed under Apache 2.0',

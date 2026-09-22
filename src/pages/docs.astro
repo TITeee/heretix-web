@@ -1,0 +1,190 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { en as t } from '../i18n/en';
+
+const nav = [
+  { href: '#requirements', label: t.docsNavRequirements },
+  { href: '#deploy-api', label: t.docsNavDeployApi },
+  { href: '#import-data', label: t.docsNavImportData },
+  { href: '#deploy-management', label: t.docsNavDeployManagement },
+  { href: '#quickstart-cli', label: t.docsNavQuickstart },
+];
+
+const requirements = [
+  { label: 'CPU', value: t.docsRequirementsCpu },
+  { label: 'RAM', value: t.docsRequirementsRam },
+  { label: 'Disk', value: t.docsRequirementsDisk },
+  { label: 'Software', value: t.docsRequirementsSoftware },
+];
+---
+
+<BaseLayout title={t.docsMetaTitle} description={t.docsMetaDescription}>
+  <Header />
+  <main class="px-4 pt-28 pb-24">
+    <div class="max-w-5xl mx-auto mb-14">
+      <div class="font-mono text-xs font-medium tracking-[0.14em] uppercase text-accent mb-3">Self-Hosted Deployment</div>
+      <h1 class="text-3xl sm:text-4xl font-semibold text-ink tracking-tight mb-3">{t.docsTitle}</h1>
+      <p class="text-ink-dim leading-relaxed max-w-2xl">{t.docsSubtitle}</p>
+    </div>
+
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row gap-12">
+      <aside class="md:w-52 shrink-0">
+        <nav class="md:sticky md:top-20 flex flex-row md:flex-col flex-wrap gap-x-4 gap-y-2 text-sm">
+          {nav.map((item) => (
+            <a href={item.href} class="text-ink-dim hover:text-ink transition-colors">{item.label}</a>
+          ))}
+        </nav>
+      </aside>
+
+      <div class="flex-1 min-w-0 max-w-2xl flex flex-col gap-16">
+
+        <section id="requirements">
+          <h2 class="text-2xl font-semibold text-ink tracking-tight mb-2">{t.docsRequirementsTitle}</h2>
+          <p class="text-ink-dim leading-relaxed mb-6">{t.docsRequirementsDesc}</p>
+
+          <dl class="flex flex-col gap-4">
+            {requirements.map((item) => (
+              <div class="grid grid-cols-[5rem_1fr] sm:grid-cols-[6rem_1fr] gap-x-4">
+                <dt class="font-mono text-xs text-ink-mute uppercase tracking-wide pt-0.5">{item.label}</dt>
+                <dd class="text-ink-dim text-sm leading-relaxed">{item.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+
+        <section id="deploy-api">
+          <h2 class="flex items-center gap-2 flex-wrap text-2xl font-semibold text-ink tracking-tight mb-2">
+            {t.docsDeployApiTitle}
+            <a href="https://github.com/TITeee/heretix-api" target="_blank" rel="noopener noreferrer" class="font-mono text-xs font-normal text-ink-mute hover:text-accent transition-colors">GitHub</a>
+          </h2>
+          <p class="text-ink-dim leading-relaxed mb-6">{t.docsDeployApiDesc}</p>
+
+          <p class="font-mono text-xs text-ink-mute mb-2">{t.docsDeployApiStep1}</p>
+          <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code>git clone https://github.com/TITeee/heretix-api
+cd heretix-api
+cp .env.example .env</code></pre>
+          <p class="text-ink-mute text-sm mt-2 mb-6 leading-relaxed">{t.docsDeployApiStep1Note}</p>
+
+          <p class="font-mono text-xs text-ink-mute mb-2">{t.docsDeployApiStep2}</p>
+          <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code>docker compose up --build -d
+docker compose logs -f app</code></pre>
+          <p class="text-ink-mute text-sm mt-2 mb-6 leading-relaxed">{t.docsDeployApiStep2Note}</p>
+
+          <p class="font-mono text-xs text-ink-mute mb-2">{t.docsDeployApiStep3}</p>
+          <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code>curl http://localhost:5000/health
+docker compose ps</code></pre>
+          <p class="text-ink-mute text-sm mt-2 mb-6 leading-relaxed">{t.docsDeployApiStep3Note}</p>
+
+          <p class="font-mono text-xs text-ink-mute mb-2">{t.docsDeployApiStep4}</p>
+          <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code>git pull
+docker compose up --build -d</code></pre>
+          <p class="text-ink-mute text-sm mt-2 leading-relaxed">{t.docsDeployApiStep4Note}</p>
+        </section>
+
+        <section id="import-data">
+          <h2 class="text-2xl font-semibold text-ink tracking-tight mb-2">{t.docsImportTitle}</h2>
+          <p class="text-ink-dim leading-relaxed mb-6">{t.docsImportDesc}</p>
+
+          <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code>docker compose exec app pnpm import:nvd full
+docker compose exec app pnpm import:osv ecosystem npm
+docker compose exec app pnpm import:osv ecosystem PyPI
+docker compose exec app pnpm import:osv ecosystem Go</code></pre>
+          <p class="text-ink-mute text-sm mt-2 leading-relaxed">
+            {t.docsImportNote}
+            {' '}<a href="https://github.com/TITeee/heretix-api#data-collection" target="_blank" rel="noopener noreferrer" class="text-accent hover:opacity-80 transition-opacity">{t.docsImportEcosystemsLink}</a>
+          </p>
+        </section>
+
+        <section id="deploy-management">
+          <h2 class="flex items-center gap-2 flex-wrap text-2xl font-semibold text-ink tracking-tight mb-2">
+            {t.docsDeployManagementTitle}
+            <a href="https://github.com/TITeee/heretix-management" target="_blank" rel="noopener noreferrer" class="font-mono text-xs font-normal text-ink-mute hover:text-accent transition-colors">GitHub</a>
+          </h2>
+          <p class="text-ink-dim leading-relaxed mb-6">{t.docsDeployManagementDesc}</p>
+
+          <p class="font-mono text-xs text-ink-mute mb-2">{t.docsDeployManagementStep1}</p>
+          <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code>git clone https://github.com/TITeee/heretix-management
+cd heretix-management
+cp .env.example .env
+<span class="text-code-mute"># set AUTH_SECRET, AUTH_URL, HERETIX_API_URL, HERETIX_API_KEY</span></code></pre>
+          <p class="text-ink-mute text-sm mt-2 mb-6 leading-relaxed">{t.docsDeployManagementStep1Note}</p>
+
+          <p class="font-mono text-xs text-ink-mute mb-2">{t.docsDeployManagementStep2}</p>
+          <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code>docker compose build && docker compose up -d
+docker compose exec app node_modules/.bin/tsx prisma/seed.ts</code></pre>
+          <p class="text-ink-mute text-sm mt-2 mb-6 leading-relaxed">{t.docsDeployManagementStep2Note}</p>
+
+          <p class="font-mono text-xs text-ink-mute mb-2">{t.docsDeployManagementStep3}</p>
+          <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code>docker compose ps
+docker compose logs -f app</code></pre>
+          <p class="text-ink-mute text-sm mt-2 mb-6 leading-relaxed">{t.docsDeployManagementStep3Note}</p>
+
+          <p class="font-mono text-xs text-ink-mute mb-2">{t.docsDeployManagementStep4}</p>
+          <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code>git pull
+docker compose build && docker compose up -d</code></pre>
+          <p class="text-ink-mute text-sm mt-2 leading-relaxed">{t.docsDeployManagementStep4Note}</p>
+        </section>
+
+        <section id="quickstart-cli">
+          <h2 class="flex items-center gap-2 flex-wrap text-2xl font-semibold text-ink tracking-tight mb-2">
+            {t.docsQuickstartTitle}
+            <a href="https://github.com/TITeee/heretix-cli" target="_blank" rel="noopener noreferrer" class="font-mono text-xs font-normal text-ink-mute hover:text-accent transition-colors">GitHub</a>
+          </h2>
+          <p class="text-ink-dim leading-relaxed mb-6">
+            {t.docsQuickstartDesc}
+            {' '}{t.docsQuickstartInstallNote}{' '}
+            <a href="https://github.com/TITeee/heretix-cli/releases/latest" target="_blank" rel="noopener noreferrer" class="text-accent hover:opacity-80 transition-opacity">{t.docsQuickstartInstallLink}</a>
+            {t.docsQuickstartInstallNotePost}
+          </p>
+
+          <div class="flex flex-col gap-6">
+            <div>
+              <p class="font-mono text-xs text-ink-mute mb-2">{t.quickstartStep1}</p>
+              <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code><span class="text-code-mute"># Scan the current host</span>
+heretix-cli scan --api-url http://heretix-api:5000 --api-key YOUR_KEY
+
+<span class="text-code-mute"># Or collect packages only (offline)</span>
+heretix-cli collect -o inventory.json
+
+<span class="text-code-mute"># Export as CycloneDX SBOM (standards-compliant JSON)</span>
+heretix-cli collect --format cyclonedx -o sbom.cdx.json</code></pre>
+            </div>
+
+            <div>
+              <p class="font-mono text-xs text-ink-mute mb-2">{t.quickstartStepDetect}</p>
+              <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code><span class="text-code-mute"># Offline supply-chain scan, no API required.
+# Exit code 1 on findings fails the CI job.</span>
+heretix-cli detect --scan-path .</code></pre>
+            </div>
+
+            <div>
+              <p class="font-mono text-xs text-ink-mute mb-2">{t.quickstartStep2}</p>
+              <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code><span class="text-code-mute"># In heretix-management, open an asset and import inventory.json
+# via the "Import Inventory" button in the asset detail page</span></code></pre>
+            </div>
+
+            <div>
+              <p class="font-mono text-xs text-ink-mute mb-2">{t.quickstartStep3}</p>
+              <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code><span class="text-code-mute"># Click "Scan" on the asset page, or use the CLI directly</span>
+heretix-cli check inventory.json --api-url http://heretix-api:5000</code></pre>
+            </div>
+
+            <div>
+              <p class="font-mono text-xs text-ink-mute mb-2">{t.quickstartStep4}</p>
+              <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code><span class="text-code-mute"># Submit inventory to GitHub Dependency Submission API</span>
+heretix-cli submit inventory.json \
+  --token $GITHUB_TOKEN \
+  --repo owner/repo \
+  --sha $SHA \
+  --ref $REF</code></pre>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
