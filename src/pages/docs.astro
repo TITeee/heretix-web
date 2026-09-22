@@ -145,11 +145,8 @@ docker compose build && docker compose up -d</code></pre>
               <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code><span class="text-code-mute"># Scan the current host</span>
 heretix-cli scan --api-url http://heretix-api:5000 --api-key YOUR_KEY
 
-<span class="text-code-mute"># Or collect packages only (offline)</span>
-heretix-cli collect -o inventory.json
-
-<span class="text-code-mute"># Export as CycloneDX SBOM (standards-compliant JSON)</span>
-heretix-cli collect --format cyclonedx -o sbom.cdx.json</code></pre>
+<span class="text-code-mute"># Or collect packages only (offline), as a CycloneDX SBOM</span>
+heretix-cli collect -o inventory.json</code></pre>
             </div>
 
             <div>
