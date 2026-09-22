@@ -30,7 +30,7 @@ export const en = {
   assetsNetworkTitle: 'Network devices & appliances',
   assetsNetworkDesc: 'Firewalls, VPN gateways, and security appliances from Fortinet, Palo Alto Networks, Cisco, Sophos, SonicWall, Broadcom/VMware, and Check Point.',
   assetsOsTitle: 'Server operating systems',
-  assetsOsDesc: 'RHEL, AlmaLinux, Rocky Linux, Oracle Linux, CentOS, Debian, Ubuntu, and Alpine, matched against distro-specific advisory feeds.',
+  assetsOsDesc: 'RHEL, AlmaLinux, Rocky Linux, Oracle Linux, Debian, Ubuntu, and Alpine, matched against distro-specific advisory feeds.',
   assetsMiddlewareTitle: 'Middleware',
   assetsMiddlewareDesc: 'Apache HTTP Server, Apache Tomcat, nginx, Zabbix, Splunk, and Oracle products (WebLogic, Java SE, MySQL, E-Business Suite, and more via Oracle CPU).',
   assetsPackagesTitle: 'Language packages',
