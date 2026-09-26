@@ -149,7 +149,7 @@ export const en = {
 
   docsImportTitle: 'Import vulnerability data',
   docsImportDesc: 'A fresh database is empty. Run the initial import once before scanning anything.',
-  docsImportNote: 'NVD’s full mirror (~240k CVEs) takes about 2.5 minutes with an NVD_API_KEY set in .env, or ~12 minutes without one. Import only the OSV ecosystems you actually scan. After the initial import, daily delta jobs and vendor advisory fetchers keep the database current automatically, with progress visible on /dashboard.',
+  docsImportNote: 'NVD’s full mirror (~400k CVEs) takes several hours, so run it in the background. Setting NVD_API_KEY in .env raises the rate limit and is recommended. Import only the OSV ecosystems you actually scan. After the initial import, daily delta jobs and vendor advisory fetchers keep the database current automatically, with progress visible on /dashboard.',
   docsImportEcosystemsLink: 'Full ecosystem and vendor advisory list',
 
   docsDeployManagementTitle: 'Deploy heretix-management',
