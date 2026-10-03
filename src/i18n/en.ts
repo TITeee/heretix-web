@@ -134,12 +134,12 @@ export const en = {
   docsRequirementsCpu: '2 vCPU minimum. The heretix-api app container can burst to roughly 70% of one core during data imports and searches; Postgres adds its own load while an import is running.',
   docsRequirementsRam: '8GB minimum, 16GB recommended. Postgres for heretix-api is the dominant consumer (around 7.7GB with a full NVD mirror plus several OSV ecosystems loaded); the two app containers and heretix-management’s database use well under 1GB combined.',
   docsRequirementsDisk: '20GB to start. heretix-api’s database volume alone can reach around 11GB after months of accumulated NVD and OSV data; budget more if you import every OSV ecosystem heretix supports.',
-  docsRequirementsSoftware: 'Docker and Docker Compose v2.',
+  docsRequirementsSoftware: 'Docker, Docker Compose v2, and git.',
 
   docsDeployApiTitle: 'Deploy heretix-api',
   docsDeployApiDesc: 'heretix-api aggregates NVD, OSV, CISA KEV, EPSS, and vendor advisories into a searchable database. It ships with its own PostgreSQL via Docker Compose.',
   docsDeployApiStep1: '1. Clone and configure',
-  docsDeployApiStep1Note: 'Set API_KEY to a value of your choosing. heretix-cli and heretix-management both authenticate with it.',
+  docsDeployApiStep1Note: 'Set API_KEY to a value of your choosing; heretix-cli and heretix-management both authenticate with it. Also set POSTGRES_PASSWORD, which otherwise defaults to changeme.',
   docsDeployApiStep2: '2. Start the stack',
   docsDeployApiStep2Note: 'The API is now live at http://localhost:5000. GET /health checks it’s up; /dashboard shows import status (needs the same API_KEY).',
   docsDeployApiStep3: '3. Verify it’s running',
@@ -149,7 +149,7 @@ export const en = {
 
   docsImportTitle: 'Import vulnerability data',
   docsImportDesc: 'A fresh database is empty. Run the initial import once before scanning anything.',
-  docsImportNote: 'NVD’s full mirror (~400k CVEs) takes several hours, so run it in the background. Setting NVD_API_KEY in .env raises the rate limit and is recommended. Import only the OSV ecosystems you actually scan. After the initial import, daily delta jobs and vendor advisory fetchers keep the database current automatically, with progress visible on /dashboard.',
+  docsImportNote: 'NVD’s full mirror (~400k CVEs) takes several hours, so the command runs in the background (-d); follow progress on /dashboard. Setting NVD_API_KEY in .env raises the rate limit and is recommended. Import only the OSV ecosystems you actually scan. Once NVD finishes, click Run for KEV and EPSS on the dashboard: they only add data to CVEs already imported, so a scheduled run that fires before NVD completes leaves them empty until the next day. Only NVD, KEV and EPSS are scheduled by default. After the initial import, switch On the jobs for the OSV ecosystems you imported and the vendor advisories you use (plus cna, osv-mal and debian-tracker if needed) on the dashboard; otherwise they are not updated.',
   docsImportEcosystemsLink: 'Full ecosystem and vendor advisory list',
 
   docsDeployManagementTitle: 'Deploy heretix-management',

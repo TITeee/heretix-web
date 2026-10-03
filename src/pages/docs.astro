@@ -87,13 +87,13 @@ docker compose up --build -d</code></pre>
           <h2 class="text-2xl font-semibold text-ink tracking-tight mb-2">{t.docsImportTitle}</h2>
           <p class="text-ink-dim leading-relaxed mb-6">{t.docsImportDesc}</p>
 
-          <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code>docker compose exec app pnpm import:nvd full
+          <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code>docker compose exec -d app pnpm import:nvd full
 docker compose exec app pnpm import:osv ecosystem npm
 docker compose exec app pnpm import:osv ecosystem PyPI
 docker compose exec app pnpm import:osv ecosystem Go</code></pre>
           <p class="text-ink-mute text-sm mt-2 leading-relaxed">
             {t.docsImportNote}
-            {' '}<a href="https://github.com/TITeee/heretix-api#data-collection" target="_blank" rel="noopener noreferrer" class="text-accent hover:opacity-80 transition-opacity">{t.docsImportEcosystemsLink}</a>
+            {' '}<a href="https://github.com/TITeee/heretix-api/blob/main/docs/data-sources.md" target="_blank" rel="noopener noreferrer" class="text-accent hover:opacity-80 transition-opacity">{t.docsImportEcosystemsLink}</a>
           </p>
         </section>
 
@@ -143,7 +143,7 @@ docker compose build && docker compose up -d</code></pre>
             <div>
               <p class="font-mono text-xs text-ink-mute mb-2">{t.quickstartStep1}</p>
               <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code><span class="text-code-mute"># Scan the current host</span>
-heretix-cli scan --api-url http://heretix-api:5000 --api-key YOUR_KEY
+heretix-cli scan --api-url http://&lt;host-ip&gt;:5000 --api-key YOUR_KEY
 
 <span class="text-code-mute"># Or collect packages only (offline), as a CycloneDX SBOM</span>
 heretix-cli collect -o inventory.json</code></pre>
@@ -165,7 +165,7 @@ heretix-cli detect --scan-path .</code></pre>
             <div>
               <p class="font-mono text-xs text-ink-mute mb-2">{t.quickstartStep3}</p>
               <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code><span class="text-code-mute"># Click "Scan" on the asset page, or use the CLI directly</span>
-heretix-cli check inventory.json --api-url http://heretix-api:5000</code></pre>
+heretix-cli check inventory.json --api-url http://&lt;host-ip&gt;:5000</code></pre>
             </div>
 
             <div>
