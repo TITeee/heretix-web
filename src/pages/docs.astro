@@ -146,7 +146,7 @@ docker compose build && docker compose up -d</code></pre>
 heretix-cli scan --api-url http://&lt;host-ip&gt;:5000 --api-key YOUR_KEY
 
 <span class="text-code-mute"># Or collect packages only (offline), as a CycloneDX SBOM</span>
-heretix-cli collect -o inventory.json</code></pre>
+heretix-cli collect -o sbom.json</code></pre>
             </div>
 
             <div>
@@ -158,20 +158,20 @@ heretix-cli detect --scan-path .</code></pre>
 
             <div>
               <p class="font-mono text-xs text-ink-mute mb-2">{t.quickstartStep2}</p>
-              <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code><span class="text-code-mute"># In heretix-management, open an asset and import inventory.json
-# via the "Import Inventory" button in the asset detail page</span></code></pre>
+              <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code><span class="text-code-mute"># In heretix-management, open the Assets page and import sbom.json
+# via the "Import SBOM" button (Trivy and Syft CycloneDX SBOMs work too)</span></code></pre>
             </div>
 
             <div>
               <p class="font-mono text-xs text-ink-mute mb-2">{t.quickstartStep3}</p>
               <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code><span class="text-code-mute"># Click "Scan" on the asset page, or use the CLI directly</span>
-heretix-cli check inventory.json --api-url http://&lt;host-ip&gt;:5000</code></pre>
+heretix-cli check sbom.json --api-url http://&lt;host-ip&gt;:5000</code></pre>
             </div>
 
             <div>
               <p class="font-mono text-xs text-ink-mute mb-2">{t.quickstartStep4}</p>
-              <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code><span class="text-code-mute"># Submit inventory to GitHub Dependency Submission API</span>
-heretix-cli submit inventory.json \
+              <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code><span class="text-code-mute"># Submit the SBOM to GitHub Dependency Submission API</span>
+heretix-cli submit sbom.json \
   --token $GITHUB_TOKEN \
   --repo owner/repo \
   --sha $SHA \
