@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { en as t } from '../../i18n/en';
+
+const base = import.meta.env.BASE_URL;
+
+type Post = {
+  url: string;
+  frontmatter: { title: string; description: string; date: Date };
+};
+
+const modules = import.meta.glob<Post>('./*.md', { eager: true });
+const posts = Object.values(modules).sort(
+  (a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime(),
+);
+const dateOf = (d: Date) => new Date(d).toISOString().slice(0, 10);
+---
+
+<BaseLayout title={t.blogMetaTitle} description={t.blogMetaDescription}>
+  <Header />
+  <main class="px-4 pt-28 pb-24 min-h-[70vh]">
+    <div class="max-w-2xl mx-auto">
+      <div class="font-mono text-xs font-medium tracking-[0.14em] uppercase text-accent mb-3">{t.blogEyebrow}</div>
+      <h1 class="text-3xl sm:text-4xl font-semibold text-ink tracking-tight mb-3">{t.blogTitle}</h1>
+      <p class="text-ink-dim leading-relaxed mb-10">{t.blogSubtitle}</p>
+
+      <div class="border-t border-line">
+        {posts.map((post) => (
+          <a href={post.url} class="block py-6 border-b border-line group">
+            <time datetime={dateOf(post.frontmatter.date)} class="font-mono text-xs text-ink-mute">{dateOf(post.frontmatter.date)}</time>
+            <h2 class="text-xl font-semibold text-ink tracking-tight mt-1 mb-2 group-hover:text-accent transition-colors">{post.frontmatter.title}</h2>
+            <p class="text-sm text-ink-dim leading-relaxed">{post.frontmatter.description}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>

@@ -5,6 +5,7 @@ export const en = {
 
   // Nav
   navDocs: 'Docs',
+  navBlog: 'Blog',
   navGitHub: 'GitHub',
 
   // Hero
@@ -132,6 +133,13 @@ export const en = {
   quickstartStep2: '2. Import the SBOM into heretix-management',
   quickstartStep3: '3. Run a vulnerability scan',
   quickstartStep4: '4. Submit to GitHub for Dependabot alerts (optional)',
+
+  // Blog
+  blogMetaTitle: 'heretix Blog',
+  blogMetaDescription: 'Notes on how vulnerability scanning works on real Linux distributions, and how heretix handles it.',
+  blogEyebrow: 'Blog',
+  blogTitle: 'Notes from building heretix',
+  blogSubtitle: 'How vulnerability scanning works on real Linux distributions, and how heretix handles it.',
 
   // Docs page
   docsMetaTitle: 'heretix Docs',
