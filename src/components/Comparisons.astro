@@ -1,0 +1,125 @@
+---
+import { en as t } from '../i18n/en';
+
+const docs = 'https://github.com/TITeee/heretix-api/blob/main/docs';
+
+const rows = [
+  {
+    host: 'RHEL 9.8',
+    trivyVersion: '0.74.0',
+    trivyDb: '2026-10-18',
+    date: '2026-10-18',
+    packages: '517 RPM',
+    trivy: '63,465',
+    heretix: '68,923',
+    both: '63,452',
+    onlyTrivy: '13',
+    onlyHeretix: '5,471',
+    notes: [
+      'Only Trivy: 2 CVEs Red Hat publishes no VEX document for, and 1 that Red Hat lists as not affected.',
+      'Only heretix: unfixed CVEs Red Hat records as deferred, affected or will not fix; Red Hat’s VEX data confirms 5,470 of the 5,471.',
+      'Fixed versions agree on all 1,712 findings that have one.',
+    ],
+    href: `${docs}/detection-comparison-rhel9.md`,
+  },
+  {
+    host: 'Debian 13.4',
+    trivyVersion: '0.74.0',
+    trivyDb: '2026-10-23',
+    date: '2026-10-24',
+    packages: '337 dpkg',
+    trivy: '1,684',
+    heretix: '7,896',
+    both: '1,673',
+    onlyTrivy: '11',
+    onlyHeretix: '6,223',
+    notes: [
+      'Only Trivy: Debian issues with no CVE number (TEMP-* and CVE-less DSAs), which OSV does not publish.',
+      'Only heretix: 6,207 on the signed kernel and boot loaders, on which Trivy reports no finding; 6 Debian has not decided on, 6 from OSV records newer than Trivy’s database, and 4 false positives where OSV still lists a package the tracker has cleared.',
+      'Fixed versions agree on all 734 findings that have one.',
+    ],
+    href: `${docs}/detection-comparison-debian13.md`,
+  },
+  {
+    host: 'Ubuntu 24.04.5',
+    trivyVersion: '0.74.0',
+    trivyDb: '2026-10-31',
+    date: '2026-10-31',
+    packages: '651 dpkg',
+    trivy: '20,604',
+    heretix: '24,817',
+    both: '20,604',
+    onlyTrivy: '0',
+    onlyHeretix: '4,213',
+    notes: [
+      'Only heretix: 3,459 on the signed kernel image, on which Trivy reports no finding; 706 that Ubuntu has not triaged or will not fix; 4 security updates with no CVE number; 44 not verified.',
+      'Fixed versions agree on all 6 findings that have one.',
+    ],
+    href: `${docs}/detection-comparison-ubuntu2404.md`,
+  },
+];
+
+const cols = 'md:grid-cols-[9rem_5.5rem_repeat(5,minmax(0,1fr))_8rem]';
+---
+
+<section class="py-20 px-4">
+  <div class="max-w-5xl mx-auto">
+    <div class="mb-9">
+      <div class="font-mono text-xs font-medium tracking-[0.14em] uppercase text-accent mb-3">Comparison</div>
+      <h2 class="text-3xl sm:text-4xl font-semibold text-ink tracking-tight mb-3">{t.compareTitle}</h2>
+      <p class="text-sm text-ink-dim leading-relaxed max-w-2xl mb-3">{t.compareSubtitle}</p>
+      <p class="text-sm text-ink-mute leading-relaxed max-w-2xl">{t.compareMethodNote}</p>
+    </div>
+
+    <div class="border-t border-line">
+      <div class:list={["hidden md:grid gap-4 pt-3 pb-1 font-mono text-[11px] tracking-wide uppercase text-ink-mute", cols]}>
+        <div></div>
+        <div></div>
+        <div class="col-span-5 border-b border-line-soft pb-1">{t.compareFindingsLabel}</div>
+        <div></div>
+      </div>
+      <div class:list={["hidden md:grid gap-4 py-2 border-b border-line font-mono text-[11px] tracking-wide uppercase text-ink-mute", cols]}>
+        <div>{t.compareColHost}</div>
+        <div>{t.compareColPackages}</div>
+        <div class="text-right">{t.compareColTrivy}</div>
+        <div class="text-right">{t.compareColHeretix}</div>
+        <div class="text-right">{t.compareColBoth}</div>
+        <div class="text-right">{t.compareColOnlyTrivy}</div>
+        <div class="text-right">{t.compareColOnlyHeretix}</div>
+        <div></div>
+      </div>
+
+      {rows.map((row) => (
+        <div class="py-5 border-b border-line">
+          <div class:list={["grid grid-cols-2 gap-x-4 gap-y-1.5 text-sm items-baseline", cols]}>
+            <div class="col-span-2 md:col-span-1 mb-1 md:mb-0">
+              <div class="font-semibold text-ink">{row.host}</div>
+              <div class="font-mono text-xs text-ink-mute">{row.date}</div>
+              <div class="font-mono text-[11px] text-ink-mute">Trivy {row.trivyVersion}</div>
+              <div class="font-mono text-[11px] text-ink-mute">Trivy DB {row.trivyDb}</div>
+            </div>
+            <div class="col-span-2 md:col-span-1 text-ink-dim"><span class="md:hidden text-ink-mute">{t.compareColPackages}: </span>{row.packages}</div>
+            <div class="text-ink-mute md:hidden">{t.compareColTrivy}</div>
+            <div class="font-mono text-ink text-right">{row.trivy}</div>
+            <div class="text-ink-mute md:hidden">{t.compareColHeretix}</div>
+            <div class="font-mono text-ink text-right">{row.heretix}</div>
+            <div class="text-ink-mute md:hidden">{t.compareColBoth}</div>
+            <div class="font-mono text-ink text-right">{row.both}</div>
+            <div class="text-ink-mute md:hidden">{t.compareColOnlyTrivy}</div>
+            <div class="font-mono text-ink-dim text-right">{row.onlyTrivy}</div>
+            <div class="text-ink-mute md:hidden">{t.compareColOnlyHeretix}</div>
+            <div class="font-mono text-ink-dim text-right">{row.onlyHeretix}</div>
+            <div class="col-span-2 md:col-span-1 md:text-right mt-1 md:mt-0">
+              <a href={row.href} target="_blank" rel="noopener noreferrer" class="text-accent hover:opacity-80 transition-opacity">{t.compareReadMore} &rarr;</a>
+            </div>
+          </div>
+          <ul class="mt-3 flex flex-col gap-1">
+            {row.notes.map((note) => (
+              <li class="text-[13px] text-ink-mute leading-relaxed">{note}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

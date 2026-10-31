@@ -6,9 +6,9 @@ Landing page for the [heretix](https://github.com/TITeee) vulnerability manageme
 
 ## Related repositories
 
-- [heretix-api](https://github.com/TITeee/heretix-api) — vulnerability intelligence API (NVD, OSV, CVE Records, EPSS, KEV, vendor PSIRT advisories)
-- [heretix-cli](https://github.com/TITeee/heretix-cli) — scans servers, containers, and OSS dependencies for known CVEs, emits CycloneDX SBOMs
-- [heretix-management](https://github.com/TITeee/heretix-management) — vulnerability management dashboard (assets, alerts, SLA, VEX)
+- [heretix-api](https://github.com/TITeee/heretix-api): vulnerability intelligence API (NVD, OSV, CVE Records, EPSS, KEV, vendor PSIRT advisories)
+- [heretix-cli](https://github.com/TITeee/heretix-cli): scans servers, containers, and OSS dependencies for known CVEs, emits CycloneDX SBOMs
+- [heretix-management](https://github.com/TITeee/heretix-management): vulnerability management dashboard (assets, alerts, SLA, VEX)
 
 ## Development
 

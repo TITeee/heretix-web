@@ -81,6 +81,10 @@ docker compose ps</code></pre>
           <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code>git pull
 docker compose up --build -d</code></pre>
           <p class="text-ink-mute text-sm mt-2 leading-relaxed">{t.docsDeployApiStep4Note}</p>
+          <p class="text-ink-mute text-sm mt-4 leading-relaxed">
+            {t.docsHttpsNote}
+            {' '}<a href="https://github.com/TITeee/heretix-api/blob/main/docs/tls-proxy.md" target="_blank" rel="noopener noreferrer" class="text-accent hover:opacity-80 transition-opacity">{t.docsHttpsLink}</a>
+          </p>
         </section>
 
         <section id="import-data">
@@ -108,23 +112,31 @@ docker compose exec app pnpm import:osv ecosystem Go</code></pre>
           <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code>git clone https://github.com/TITeee/heretix-management
 cd heretix-management
 cp .env.example .env
-<span class="text-code-mute"># set AUTH_SECRET, AUTH_URL, HERETIX_API_URL, HERETIX_API_KEY</span></code></pre>
+<span class="text-code-mute"># set AUTH_SECRET, AUTH_URL, HERETIX_API_KEY, POSTGRES_PASSWORD</span></code></pre>
           <p class="text-ink-mute text-sm mt-2 mb-6 leading-relaxed">{t.docsDeployManagementStep1Note}</p>
 
           <p class="font-mono text-xs text-ink-mute mb-2">{t.docsDeployManagementStep2}</p>
-          <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code>docker compose build && docker compose up -d
+          <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code>docker compose up --build -d
 docker compose exec app node_modules/.bin/tsx prisma/seed.ts</code></pre>
-          <p class="text-ink-mute text-sm mt-2 mb-6 leading-relaxed">{t.docsDeployManagementStep2Note}</p>
+          <p class="text-ink-mute text-sm mt-2 mb-6 leading-relaxed">
+            {t.docsDeployManagementStep2Note}
+            {' '}<a href="https://github.com/TITeee/heretix-management#3-create-the-admin-user" target="_blank" rel="noopener noreferrer" class="text-accent hover:opacity-80 transition-opacity">{t.docsDeployManagementLostPassword}</a>
+          </p>
 
           <p class="font-mono text-xs text-ink-mute mb-2">{t.docsDeployManagementStep3}</p>
           <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code>docker compose ps
+curl -s -o /dev/null -w "%&#123;http_code&#125;\n" localhost:3000/login
 docker compose logs -f app</code></pre>
           <p class="text-ink-mute text-sm mt-2 mb-6 leading-relaxed">{t.docsDeployManagementStep3Note}</p>
 
           <p class="font-mono text-xs text-ink-mute mb-2">{t.docsDeployManagementStep4}</p>
           <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code>git pull
-docker compose build && docker compose up -d</code></pre>
+docker compose up --build -d</code></pre>
           <p class="text-ink-mute text-sm mt-2 leading-relaxed">{t.docsDeployManagementStep4Note}</p>
+          <p class="text-ink-mute text-sm mt-4 leading-relaxed">
+            {t.docsHttpsNote}
+            {' '}<a href="https://github.com/TITeee/heretix-management/blob/main/docs/tls-proxy.md" target="_blank" rel="noopener noreferrer" class="text-accent hover:opacity-80 transition-opacity">{t.docsHttpsLink}</a>
+          </p>
         </section>
 
         <section id="quickstart-cli">
@@ -146,7 +158,7 @@ docker compose build && docker compose up -d</code></pre>
 heretix-cli scan --api-url http://&lt;host-ip&gt;:5000 --api-key YOUR_KEY
 
 <span class="text-code-mute"># Or collect packages only (offline), as a CycloneDX SBOM</span>
-heretix-cli collect -o sbom.json</code></pre>
+heretix-cli collect --output sbom.json</code></pre>
             </div>
 
             <div>
@@ -165,7 +177,7 @@ heretix-cli detect --scan-path .</code></pre>
             <div>
               <p class="font-mono text-xs text-ink-mute mb-2">{t.quickstartStep3}</p>
               <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code><span class="text-code-mute"># Click "Scan" on the asset page, or use the CLI directly</span>
-heretix-cli check sbom.json --api-url http://&lt;host-ip&gt;:5000</code></pre>
+heretix-cli check sbom.json --api-url http://&lt;host-ip&gt;:5000 --api-key YOUR_KEY</code></pre>
             </div>
 
             <div>
