@@ -17,7 +17,7 @@ export const en = {
   // Stats
   stat1Value: '18',
   stat1Label: 'Vendor advisory sources',
-  stat2Value: '11',
+  stat2Value: '12',
   stat2Label: 'OS & language ecosystems',
   stat3Value: '5',
   stat3Label: 'Supply-chain detectors',
