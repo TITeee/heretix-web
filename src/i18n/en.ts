@@ -6,6 +6,7 @@ export const en = {
   // Nav
   navDocs: 'Docs',
   navBlog: 'Blog',
+  navMenu: 'Menu',
   navGitHub: 'GitHub',
 
   // Hero
