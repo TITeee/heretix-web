@@ -137,10 +137,9 @@ export const en = {
 
   // Blog
   blogMetaTitle: 'heretix Blog',
-  blogMetaDescription: 'Notes on how vulnerability scanning works on real Linux distributions, and how heretix handles it.',
+  blogMetaDescription: 'Notes on vulnerability management, and how heretix handles it.',
   blogEyebrow: 'Blog',
   blogTitle: 'Notes from building heretix',
-  blogSubtitle: 'How vulnerability scanning works on real Linux distributions, and how heretix handles it.',
 
   // Docs page
   docsMetaTitle: 'heretix Docs',

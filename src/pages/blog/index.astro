@@ -23,8 +23,7 @@ const dateOf = (d: Date) => new Date(d).toISOString().slice(0, 10);
   <main class="px-4 pt-28 pb-24 min-h-[70vh]">
     <div class="max-w-2xl mx-auto">
       <div class="font-mono text-xs font-medium tracking-[0.14em] uppercase text-accent mb-3">{t.blogEyebrow}</div>
-      <h1 class="text-3xl sm:text-4xl font-semibold text-ink tracking-tight mb-3">{t.blogTitle}</h1>
-      <p class="text-ink-dim leading-relaxed mb-10">{t.blogSubtitle}</p>
+      <h1 class="text-3xl sm:text-4xl font-semibold text-ink tracking-tight mb-10">{t.blogTitle}</h1>
 
       <div class="border-t border-line">
         {posts.map((post) => (
