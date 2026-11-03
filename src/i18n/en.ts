@@ -67,10 +67,10 @@ export const en = {
   showcaseTitle: 'See it in action',
   showcaseSubtitle: 'A full management console: dashboards, asset inventory, alert triage, remediation by fix, and a dependency graph in one self-hosted app.',
   showcaseCaptionDashboard: 'Dashboard: severity breakdown, trends, and KEV highlights',
-  showcaseCaptionAssets: 'Asset inventory imported from a CycloneDX SBOM',
   showcaseCaptionAlerts: 'Alert triage with multi-value filters and bulk actions',
   showcaseCaptionAlertsDetail: 'Alert detail: CVSS, KEV, EPSS, fixed version, and SLA due date',
   showcaseCaptionRemediation: 'Remediation: an asset’s open alerts grouped by the change that fixes them',
+  showcaseCaptionPackages: 'Packages from a CycloneDX SBOM, with source package, license, and alert counts',
   showcaseCaptionGraph: 'Dependency graph: which packages pull in a vulnerable dependency',
 
   // Components
