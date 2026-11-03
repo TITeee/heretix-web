@@ -151,38 +151,48 @@ docker compose up --build -d</code></pre>
             {t.docsQuickstartInstallNotePost}
           </p>
 
-          <div class="flex flex-col gap-6">
+          <div class="flex flex-col gap-10">
             <div>
-              <p class="font-mono text-xs text-ink-mute mb-2">{t.quickstartStep1}</p>
-              <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code><span class="text-code-mute"># Scan the current host</span>
-heretix-cli scan --api-url http://&lt;host-ip&gt;:5000 --api-key YOUR_KEY
+              <h3 class="text-lg font-semibold text-ink tracking-tight mb-1">{t.quickstartNowTitle}</h3>
+              <p class="text-ink-dim text-sm leading-relaxed mb-3">{t.quickstartNowDesc}</p>
+              <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code><span class="text-code-mute"># The API key can also be passed with --api-key</span>
+export HERETIX_API_KEY=&lt;your key&gt;
 
-<span class="text-code-mute"># Or collect packages only (offline), as a CycloneDX SBOM</span>
-heretix-cli collect --output sbom.json</code></pre>
+<span class="text-code-mute"># Scan this host</span>
+heretix-cli scan --api-url http://&lt;api-host&gt;:5000
+
+<span class="text-code-mute"># Scan a container image</span>
+heretix-cli scan --image nginx:latest --api-url http://&lt;api-host&gt;:5000</code></pre>
             </div>
 
             <div>
-              <p class="font-mono text-xs text-ink-mute mb-2">{t.quickstartStepDetect}</p>
-              <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code><span class="text-code-mute"># Offline supply-chain scan, no API required.
-# Exit code 1 on findings fails the CI job.</span>
+              <h3 class="text-lg font-semibold text-ink tracking-tight mb-1">{t.quickstartTrackTitle}</h3>
+              <p class="text-ink-dim text-sm leading-relaxed mb-3">{t.quickstartTrackDesc}</p>
+              <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code><span class="text-code-mute"># By hand: write the SBOM, then import sbom.json on the Assets page</span>
+heretix-cli collect --output sbom.json
+
+<span class="text-code-mute"># From the command line or CI: send it with an access token</span>
+export HERETIX_MANAGEMENT_URL=https://heretix.example.com
+export HERETIX_MANAGEMENT_TOKEN=&lt;access token&gt;
+heretix-cli collect --image myapp:1.0 --name myapp --output sbom.json
+heretix-cli upload sbom.json</code></pre>
+            </div>
+
+            <div>
+              <h3 class="text-lg font-semibold text-ink tracking-tight mb-1">{t.quickstartCiTitle}</h3>
+              <p class="text-ink-dim text-sm leading-relaxed mb-3">{t.quickstartCiDesc}</p>
+              <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code><span class="text-code-mute"># Fail the step on findings with a CVSS score of 7.0 or higher
+# (HERETIX_API_KEY set as a CI secret)</span>
+heretix-cli scan --image myapp:latest --api-url http://&lt;api-host&gt;:5000 --severity 7.0
+
+<span class="text-code-mute"># Supply-chain checks only (offline, no API)</span>
 heretix-cli detect --scan-path .</code></pre>
             </div>
 
             <div>
-              <p class="font-mono text-xs text-ink-mute mb-2">{t.quickstartStep2}</p>
-              <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code><span class="text-code-mute"># In heretix-management, open the Assets page and import sbom.json
-# via the "Import SBOM" button (Trivy and Syft CycloneDX SBOMs work too)</span></code></pre>
-            </div>
-
-            <div>
-              <p class="font-mono text-xs text-ink-mute mb-2">{t.quickstartStep3}</p>
-              <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code><span class="text-code-mute"># Click "Scan" on the asset page, or use the CLI directly</span>
-heretix-cli check sbom.json --api-url http://&lt;host-ip&gt;:5000 --api-key YOUR_KEY</code></pre>
-            </div>
-
-            <div>
-              <p class="font-mono text-xs text-ink-mute mb-2">{t.quickstartStep4}</p>
-              <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code><span class="text-code-mute"># Submit the SBOM to GitHub Dependency Submission API</span>
+              <h3 class="text-lg font-semibold text-ink tracking-tight mb-1">{t.quickstartGithubTitle}</h3>
+              <p class="text-ink-dim text-sm leading-relaxed mb-3">{t.quickstartGithubDesc}</p>
+              <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code><span class="text-code-mute"># Submit the SBOM to the GitHub Dependency Submission API</span>
 heretix-cli submit sbom.json \
   --token $GITHUB_TOKEN \
   --repo owner/repo \
@@ -190,6 +200,11 @@ heretix-cli submit sbom.json \
   --ref $REF</code></pre>
             </div>
           </div>
+
+          <p class="text-ink-mute text-sm mt-8 leading-relaxed">
+            {t.quickstartContribNote}
+            {' '}<a href="https://github.com/TITeee/heretix-cli/tree/main/contrib" target="_blank" rel="noopener noreferrer" class="text-accent hover:opacity-80 transition-opacity">contrib</a>
+          </p>
         </section>
 
       </div>
