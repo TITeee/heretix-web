@@ -91,12 +91,23 @@ docker compose up --build -d</code></pre>
           <h2 class="text-2xl font-semibold text-ink tracking-tight mb-2">{t.docsImportTitle}</h2>
           <p class="text-ink-dim leading-relaxed mb-6">{t.docsImportDesc}</p>
 
+          <p class="font-mono text-xs text-ink-mute mb-2">{t.docsImportStep1}</p>
+          <p class="text-ink-mute text-sm mb-6 leading-relaxed">{t.docsImportStep1Note}</p>
+
+          <p class="font-mono text-xs text-ink-mute mb-2">{t.docsImportStep2}</p>
+          <p class="text-ink-mute text-sm mb-6 leading-relaxed">{t.docsImportStep2Note}</p>
+
+          <p class="font-mono text-xs text-ink-mute mb-2">{t.docsImportStep3}</p>
+          <p class="text-ink-mute text-sm mb-6 leading-relaxed">{t.docsImportStep3Note}</p>
+
+          <p class="font-mono text-xs text-ink-mute mb-2">{t.docsImportStep4}</p>
+          <p class="text-ink-mute text-sm mb-6 leading-relaxed">{t.docsImportStep4Note}</p>
+
+          <p class="text-ink-dim text-sm mb-2 leading-relaxed">{t.docsImportCli}</p>
           <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code>docker compose exec -d app pnpm import:nvd full
 docker compose exec app pnpm import:osv ecosystem npm
-docker compose exec app pnpm import:osv ecosystem PyPI
-docker compose exec app pnpm import:osv ecosystem Go</code></pre>
+docker compose exec app pnpm import:osv ecosystem Ubuntu</code></pre>
           <p class="text-ink-mute text-sm mt-2 leading-relaxed">
-            {t.docsImportNote}
             {' '}<a href="https://github.com/TITeee/heretix-api/blob/main/docs/data-sources.md" target="_blank" rel="noopener noreferrer" class="text-accent hover:opacity-80 transition-opacity">{t.docsImportEcosystemsLink}</a>
           </p>
         </section>
