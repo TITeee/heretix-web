@@ -189,7 +189,6 @@ export const en = {
   docsImportStep3Note: 'Under OSV Ecosystems, choose each ecosystem you actually scan (npm, PyPI, Go, Ubuntu, …) and press Add and load. That switches its daily job on and loads it in full. Malicious packages (MAL-*) arrive with these ecosystems.',
   docsImportStep4: '4. Everything else',
   docsImportStep4Note: 'Switch the job On and press Run once: the vendor advisories and the Debian and Ubuntu trackers (debian-tracker, ubuntu-tracker). CVE Records (cna, a download of about 650MB) and Microsoft’s Windows Server advisories (advisory-microsoft) say Load the first time, like NVD. Only NVD, KEV and EPSS are scheduled by default.',
-  docsImportCli: 'Or from the command line, for scripts and for loading again from scratch:',
   docsImportEcosystemsLink: 'Full ecosystem and vendor advisory list',
   docsHttpsNote: 'Reaching it from beyond your own network? Serve it over HTTPS:',
   docsHttpsLink: 'reverse proxy guide',
