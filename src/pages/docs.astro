@@ -165,8 +165,8 @@ docker compose up --build -d</code></pre>
               <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code><span class="text-code-mute"># The API key can also be passed with --api-key</span>
 export HERETIX_API_KEY=&lt;your key&gt;
 
-<span class="text-code-mute"># Scan this host</span>
-heretix-cli scan --api-url http://&lt;api-host&gt;:5000
+<span class="text-code-mute"># Scan this host, as root (-E keeps HERETIX_API_KEY)</span>
+sudo -E heretix-cli scan --api-url http://&lt;api-host&gt;:5000
 
 <span class="text-code-mute"># Scan a container image</span>
 heretix-cli scan --image nginx:latest --api-url http://&lt;api-host&gt;:5000</code></pre>
@@ -175,8 +175,8 @@ heretix-cli scan --image nginx:latest --api-url http://&lt;api-host&gt;:5000</co
             <div>
               <h3 class="text-lg font-semibold text-ink tracking-tight mb-1">{t.quickstartTrackTitle}</h3>
               <p class="text-ink-dim text-sm leading-relaxed mb-3">{t.quickstartTrackDesc}</p>
-              <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code><span class="text-code-mute"># By hand: write the SBOM, then import sbom.json on the Assets page</span>
-heretix-cli collect --output sbom.json
+              <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto"><code><span class="text-code-mute"># By hand: write the host's SBOM as root, then import sbom.json on the Assets page</span>
+sudo heretix-cli collect --output sbom.json
 
 <span class="text-code-mute"># From the command line or CI: send it with an access token</span>
 export HERETIX_MANAGEMENT_URL=https://heretix.example.com

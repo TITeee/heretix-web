@@ -113,6 +113,10 @@ export const en = {
   feature14Title: 'Pick Products from a Catalog',
   feature14Desc: 'When you register a device or tool by hand, such as BIG-IP, Junos OS, GitLab, or Jenkins, pick it from heretix-api’s product catalog instead of guessing how NVD spells its name. The search then uses that product’s exact vendor and product pairs, so Ivanti Automation finds Ivanti’s CVEs and not those of another vendor’s product with the same name.',
   feature15Title: 'Fewer, Truer Findings',
+  feature16Title: 'What the Host Actually Runs',
+  feature16Desc: 'On a host, heretix-cli also reads which OS packages the running processes have loaded, and records it in the SBOM: which packages are in use, which services load them, and which services still run an old copy of a package that has since been upgraded and need a restart for the fix to take effect. It describes the moment of the scan, so a program that runs now and then is not seen.',
+  feature17Title: 'OS Package Dependencies',
+  feature17Desc: 'heretix-cli resolves the dependencies dpkg, rpm, and apk record for each OS package, so a host’s SBOM carries its dependency graph as a lockfile scan does, with the packages nothing else depends on marked as direct.',
   feature15Desc: 'For Debian, Ubuntu, and Alpine, heretix-cli records the source package and its version, which is what the distributions’ advisories name. Findings are collapsed per source package, and kernel-header and build-toolchain packages are tagged separately; on one measured image, --runtime-only cut findings from 1485 to 721 to 267.',
 
   // Detection comparisons
@@ -134,7 +138,7 @@ export const en = {
   quickstartTeaserDesc: 'Stand up heretix-api and heretix-management with Docker Compose, load vulnerability data, then scan your first host with heretix-cli.',
   quickstartTeaserCta: 'View the deploy guide',
   quickstartNowTitle: 'Check a host or image now',
-  quickstartNowDesc: 'Scan this machine or a container image and read the findings in the terminal. The scan asks heretix-api, which runs on a server of its own, so pass its address with --api-url (port 5000) and its API key.',
+  quickstartNowDesc: 'Scan this machine or a container image and read the findings in the terminal. The scan asks heretix-api, which runs on a server of its own, so pass its address with --api-url (port 5000) and its API key. Scanning the whole host runs as root, since it also reads which packages the running processes have loaded; --runtime=off leaves that out and needs no root, and an image needs none.',
   quickstartTrackTitle: 'Track findings in heretix-management',
   quickstartTrackDesc: 'Keep an asset’s alerts over time. Either import the SBOM file on the Assets page and press Scan on the asset (Trivy and Syft CycloneDX SBOMs can be imported the same way), or send it from the command line, which is how a CI build does it and scans on arrival. Sending needs an access token with the import scope, which an admin creates under Settings → Access Tokens. A fixed --name keeps every build updating one asset.',
   quickstartCiTitle: 'Fail a CI build on findings',
