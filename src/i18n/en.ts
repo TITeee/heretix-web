@@ -14,7 +14,17 @@ export const en = {
   heroTaglineHighlight: 'the appliances you can’t scan.',
   heroDescription: 'heretix tracks known vulnerabilities on firewalls and VPN gateways by matching vendor advisories against inventory, with no active scanning of the device. The same inventory also covers OS packages, containers, and language dependencies. Apache-2.0, self-hosted.',
   heroCTAPrimary: 'Get Started',
+  heroCTADemo: 'Try the demo',
   heroCTASecondary: 'GitHub',
+
+  // Demo (the heretix-demo repository)
+  demoUrl: 'https://github.com/TITeee/heretix-demo',
+  demoTitle: 'Try it in two minutes',
+  demoDesc: 'Sample servers, container images and firewalls, already scanned and partly triaged. It runs on your machine, and nothing is sent anywhere.',
+  demoOpen: 'Then open http://localhost:3000.',
+  demoLink: 'How the demo works',
+  docsDemoNote: 'Just want to look first? The demo runs heretix with sample data in about two minutes, without loading any vulnerability data.',
+  docsDemoLink: 'Try the demo',
 
   // Stats
   stat1Value: '18',
