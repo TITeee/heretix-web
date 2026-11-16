@@ -27,6 +27,10 @@ const requirements = [
       <div class="font-mono text-xs font-medium tracking-[0.14em] uppercase text-accent mb-3">Self-Hosted Deployment</div>
       <h1 class="text-3xl sm:text-4xl font-semibold text-ink tracking-tight mb-3">{t.docsTitle}</h1>
       <p class="text-ink-dim leading-relaxed max-w-2xl">{t.docsSubtitle}</p>
+      <p class="mt-4 max-w-2xl rounded-lg border border-line bg-bg-raised px-4 py-3 text-sm text-ink-dim leading-relaxed">
+        {t.docsDemoNote}{' '}
+        <a href={t.demoUrl} target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">{t.docsDemoLink}</a>
+      </p>
     </div>
 
     <div class="max-w-5xl mx-auto flex flex-col md:flex-row gap-12">

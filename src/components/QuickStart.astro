@@ -7,6 +7,18 @@ const base = import.meta.env.BASE_URL;
 <section id="quickstart" class="py-20 px-4 border-t border-line bg-bg-raised">
   <div class="max-w-2xl mx-auto text-center">
     <h2 class="text-3xl sm:text-4xl font-semibold text-ink tracking-tight mb-4">{t.quickstartTitle}</h2>
+
+    <div class="text-left rounded-xl border border-line bg-bg p-6 mb-10">
+      <h3 class="text-lg font-semibold text-ink mb-2">{t.demoTitle}</h3>
+      <p class="text-ink-dim text-sm leading-relaxed mb-4">{t.demoDesc}</p>
+      <pre class="rounded-lg bg-code border border-line p-4 text-sm text-code-ink overflow-x-auto mb-3"><code>git clone https://github.com/TITeee/heretix-demo.git
+cd heretix-demo && docker compose up -d</code></pre>
+      <p class="text-ink-dim text-sm leading-relaxed">
+        {t.demoOpen}{' '}
+        <a href={t.demoUrl} target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">{t.demoLink}</a>
+      </p>
+    </div>
+
     <p class="text-ink-dim leading-relaxed mb-8">{t.quickstartTeaserDesc}</p>
     <a
       href={`${base}/docs`}
